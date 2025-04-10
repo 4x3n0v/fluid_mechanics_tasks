@@ -1,0 +1,1244 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extarticle
+\begin_preamble
+%\usepackage{tempora}
+\usepackage[tableposition=top,font=small,justification=centering]{caption}
+\usepackage{indentfirst}
+\pagestyle{plain}
+\usepackage{fontspec} 
+\defaultfontfeatures{Ligatures={TeX},Renderer=Basic} 
+\setmainfont[Ligatures={TeX,Historic}]{Times New Roman}[NFSSFamily=ntxtlf]
+
+\usepackage{ccaption}
+\captiondelim{. }
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children no
+\language russian
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format pdf5
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize 14
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style russian
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Запишем уравнение Навье-Стокса:
+\begin_inset Formula 
+\[
+\partial_{t}\vec{v}+\left(\vec{v}\vec{\nabla}\right)\vec{v}=-\frac{1}{\rho}\vec{\nabla}p+\nu\Delta\vec{v},
+\]
+
+\end_inset
+
+где используется обозначение 
+\begin_inset Formula $\partial_{X}\equiv\frac{\partial}{\partial X}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Удобно выбрать цилиндрические координаты 
+\begin_inset Formula $\left(r,\theta,z\right)$
+\end_inset
+
+.
+ Из симметрии:
+ скорость не может зависеть от угла 
+\begin_inset Formula $\theta$
+\end_inset
+
+ и от координаты 
+\begin_inset Formula $z$
+\end_inset
+
+,
+ т.е.
+ 
+\begin_inset Formula $\vec{v}=\vec{v}\left(r\right)$
+\end_inset
+
+.
+ Кроме того,
+ рассматриваем стационарное состояние,
+ поэтому частная производная по времени зануляется.
+ Давление не зависит от угла из симметрии 
+\begin_inset Formula $p=p\left(r,z\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Рассматривается несжимаемая жидкость,
+ поэтому 
+\begin_inset Formula $\left(\vec{\nabla}\vec{v}\right)=0$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\frac{1}{r}\partial_{r}\left(rv_{r}\left(r\right)\right)+\frac{1}{r}\partial_{\theta}v_{\theta}\left(r\right)+\partial_{z}v_{z}\left(r\right)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Производные по 
+\begin_inset Formula $\theta$
+\end_inset
+
+ и 
+\begin_inset Formula $z$
+\end_inset
+
+ равны 0,
+ поскольку скорость от них не зависит,
+ поэтому
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\frac{d}{dr}\left(rv_{r}\right) & =0\\
+rv_{r} & =c\\
+v_{r} & =\frac{c}{r}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Поскольку жидкость не должна протекать за границу цилиндров,
+ радиальная скорость на них равна нулю:
+ 
+\begin_inset Formula $v_{r}\left(r=R_{1}\right)=v_{r}\left(r=R_{2}\right)=0$
+\end_inset
+
+.
+ Этим условиям может удовлетворить только решение 
+\begin_inset Formula $c=0$
+\end_inset
+
+,
+ откуда заключаем,
+ что радиальная скорость отсутствует 
+\begin_inset Formula $v_{r}\left(r\right)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Таким образом,
+ имеем,
+ что скорость есть
+\begin_inset Formula 
+\[
+\vec{v}=\left(0,v_{\theta}\left(r\right),v_{z}\left(r\right)\right)=\vec{n}_{\theta}v_{\theta}\left(r\right)+\vec{n}_{z}v_{z}\left(r\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Вычисление 
+\begin_inset Formula $\left(\vec{v}\vec{\nabla}\right)\vec{v}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Этот этап можно опустить,
+ но для понятности я его напишу.
+ Для записи уравнения НС в координатах надо посчитать 
+\begin_inset Formula $\left(\vec{v}\vec{\nabla}\right)$
+\end_inset
+
+,
+ где 
+\begin_inset Formula $\vec{\nabla}=\vec{n}_{r}\partial_{r}+\vec{n}_{\theta}\frac{1}{r}\partial_{\theta}+\vec{n}_{z}\partial_{z}$
+\end_inset
+
+.
+ Можно опустить слагаемое 
+\begin_inset Formula $\vec{n}_{z}\partial_{z}$
+\end_inset
+
+,
+ поскольку действие 
+\begin_inset Formula $\partial_{z}$
+\end_inset
+
+ как на векторы 
+\begin_inset Formula $\vec{n}_{i}$
+\end_inset
+
+,
+ так и на скорость 
+\begin_inset Formula $\vec{v}$
+\end_inset
+
+ всегда равно нулю.
+ Заметим (вроде было на лекции),
+ что 
+\begin_inset Formula $\partial_{\theta}\vec{n}_{r}=\vec{n}_{\theta}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\partial_{\theta}\vec{n}_{\theta}=-\vec{n}_{r}$
+\end_inset
+
+,
+ поэтому 
+\begin_inset Formula $\vec{n}_{\theta}\frac{1}{r}\partial_{\theta}$
+\end_inset
+
+ не выкидываем.
+ Отсюда:
+\begin_inset Formula 
+\begin{align*}
+\left(\vec{v}\vec{\nabla}\right) & =\left[\vec{n}_{\theta}v_{\theta}+\vec{n}_{z}v_{z}\right]\cdot\left[\vec{n}_{r}\partial_{r}+\vec{n}_{\theta}\frac{1}{r}\partial_{\theta}\right]\\
+ & =v_{\theta}\underset{=0}{\underbrace{\left(\vec{n}_{\theta}\vec{n}_{r}\right)}}\partial_{r}+\frac{v_{\theta}}{r}\left(\vec{n}_{\theta}\vec{n}_{\theta}\right)\partial_{\theta}+v_{z}\underset{=0}{\underbrace{\left(\vec{n}_{z}\vec{n}_{r}\right)}}\partial_{r}+\frac{v_{z}}{r}\underset{=0}{\underbrace{\left(\vec{n}_{z}\vec{n}_{\theta}\right)}}\partial_{\theta}\\
+ & =\frac{v_{\theta}}{r}\partial_{\theta}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Подействуем полученным оператором на скорость:
+\begin_inset Formula 
+\begin{align}
+\left(\vec{v}\vec{\nabla}\right)\vec{v} & =\frac{v_{\theta}}{r}\partial_{\theta}\left(\vec{n}_{\theta}v_{\theta}+\vec{n}_{z}v_{z}\right)\nonumber \\
+ & =\frac{v_{\theta}}{r}v_{\theta}\partial_{\theta}\vec{n}_{\theta}\nonumber \\
+ & =-\frac{v_{\theta}^{2}}{r}\vec{n_{r}}\label{eq:vgradv}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Вычисление 
+\begin_inset Formula $\Delta\vec{v}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Теперь поймем,
+ как выглядит 
+\begin_inset Formula $\Delta\vec{v}$
+\end_inset
+
+.
+ В цилиндрических координатах:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Delta=\frac{1}{r}\partial_{r}\left(r\partial_{r}\right)+\frac{1}{r^{2}}\partial_{\theta}^{2}+\partial_{z}^{2},
+\]
+
+\end_inset
+
+где производную по 
+\begin_inset Formula $z$
+\end_inset
+
+ также опустим,
+ потому что от 
+\begin_inset Formula $z$
+\end_inset
+
+ ничего не зависит:
+\begin_inset Formula 
+\[
+\Delta=\frac{1}{r}\partial_{r}\left(r\partial_{r}\right)+\frac{1}{r^{2}}\partial_{\theta}^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Подействуем на скорость:
+\begin_inset Formula 
+\begin{align*}
+\Delta\vec{v} & =\left[\frac{1}{r}\partial_{r}\left(r\partial_{r}\right)+\frac{1}{r^{2}}\partial_{\theta}^{2}\right]\left(\vec{n}_{\theta}v_{\theta}\left(r\right)+\vec{n}_{z}v_{z}\left(r\right)\right)\\
+ & =\frac{\vec{n}_{\theta}}{r}\partial_{r}\left(r\partial_{r}v_{\theta}\right)+\frac{v_{\theta}}{r^{2}}\partial_{\theta}^{2}\vec{n}_{\theta}+\frac{\vec{n}_{z}}{r}\partial_{r}\left(r\partial_{r}v_{z}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Поскольку 
+\begin_inset Formula $\partial_{\theta}^{2}\vec{n}_{\theta}=\partial_{\theta}\left(-\vec{n}_{r}\right)=-\vec{n}_{\theta}$
+\end_inset
+
+,
+ имеем:
+\begin_inset Formula 
+\[
+\Delta\vec{v}=\left[\frac{\partial_{r}\left(r\partial_{r}v_{\theta}\right)}{r}-\frac{v_{\theta}}{r^{2}}\right]\vec{n}_{\theta}+\frac{\partial_{r}\left(r\partial_{r}v_{z}\right)}{r}\vec{n}_{z}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Поскольку скорость зависит только от 
+\begin_inset Formula $r$
+\end_inset
+
+,
+ можно частные производные заменить на обычные:
+ 
+\begin_inset Formula 
+\begin{equation}
+\Delta\vec{v}=\left[\frac{\left(rv_{\theta}^{\prime}\right)^{\prime}}{r}-\frac{v_{\theta}}{r^{2}}\right]\vec{n}_{\theta}+\frac{\left(rv_{z}^{\prime}\right)^{\prime}}{r}\vec{n}_{z}\label{eq:lap_v}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Решение уравнения НС в координатном виде
+\end_layout
+
+\begin_layout Standard
+Теперь,
+ пользуясь 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:vgradv"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ и 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:lap_v"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ можно записать уравнение НС в координатах:
+\begin_inset Formula 
+\begin{equation}
+\begin{cases}
+-\frac{v_{\theta}^{2}}{r}=-\frac{1}{\rho}\partial_{r}p & \left(r\right)\\
+0=\nu\left[\frac{\left(rv_{\theta}^{\prime}\right)^{\prime}}{r}-\frac{v_{\theta}}{r^{2}}\right] & \left(\theta\right)\\
+0=-\frac{1}{\rho}\partial_{z}p+\nu\frac{\left(rv_{z}^{\prime}\right)^{\prime}}{r} & \left(z\right)
+\end{cases}\label{eq:NS_in_coordinats}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Рассмотрим уравнение по 
+\begin_inset Formula $\left(\theta\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+v_{\theta}^{\prime\prime}+\frac{v_{\theta}^{\prime}}{r}-\frac{v_{\theta}}{r^{2}}=0\label{eq:v_theta_diff_eq}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Это однородное уравнение (если сделать замену 
+\begin_inset Formula $v_{\theta}\rightarrow\lambda v_{\theta}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $r\rightarrow\lambda r$
+\end_inset
+
+,
+ то уравнение не изменится
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnote{это также можно увидеть из того,
+ что все слагаемые имеют размерность $v/r^2$}
+\end_layout
+
+\end_inset
+
+).
+ Поскольку уравнение 2го порядка,
+ у него есть 2 базисных решения.
+ Будем искать эти решения в виде 
+\begin_inset Formula $v_{\theta}=cr^{n}$
+\end_inset
+
+.
+ Подставив в 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:v_theta_diff_eq"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ получим:
+\begin_inset Formula 
+\[
+n\left(n-1\right)cr^{n-2}+\frac{n}{r}cr^{n-1}-c\frac{r^{n}}{r^{2}}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Сокращая на общий множитель 
+\begin_inset Formula $Cr^{n-2}$
+\end_inset
+
+,
+ получим
+\begin_inset Formula 
+\begin{align*}
+n\left(n-1\right)+n-1 & =0\\
+\left(n+1\right)\left(n-1\right) & =0,
+\end{align*}
+
+\end_inset
+
+откуда 
+\begin_inset Formula $n=+1,-1$
+\end_inset
+
+.
+ Значит,
+ общее решение записывается как
+\begin_inset Formula 
+\[
+v_{\theta}=c_{1}r+\frac{c_{2}}{r}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдем константы из гран.
+ условий.
+ Скорость 
+\begin_inset Formula $v_{\theta}$
+\end_inset
+
+ на цилиндрах равна скорости вращения цилиндров:
+ 
+\begin_inset Formula $v_{\theta}\left(R_{1}\right)=\Omega_{1}R_{1}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $v_{\theta}\left(R_{2}\right)=\Omega_{2}R_{2}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\begin{cases}
+c_{1}R_{1}+\frac{1}{R_{1}}c_{2}=\Omega_{1}R_{1}\\
+c_{1}R_{2}+\frac{1}{R_{2}}c_{2}=\Omega_{2}R_{2}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Решая эту систему (думаю,
+ решение линейной системы можно не расписывать),
+ можно получить:
+\begin_inset Formula 
+\[
+\begin{cases}
+c_{1}=\frac{\Omega_{2}R_{2}^{2}-\Omega_{1}R_{1}^{2}}{R_{2}^{2}-R_{1}^{2}}\\
+c_{2}=\frac{R_{1}^{2}R_{2}^{2}\left(\Omega_{1}-\Omega_{2}\right)}{R_{2}^{2}-R_{1}^{2}}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Теперь найдем 
+\begin_inset Formula $v_{z}\left(r\right)$
+\end_inset
+
+.
+ По условию,
+ зависимость давления от 
+\begin_inset Formula $z$
+\end_inset
+
+ линейная:
+ 
+\begin_inset Formula $\partial_{z}p=\left(p_{1}-p_{2}\right)/L$
+\end_inset
+
+.
+ Из уравнения по 
+\begin_inset Formula $\left(z\right)$
+\end_inset
+
+ в системе 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:NS_in_coordinats"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ получаем:
+\begin_inset Formula 
+\[
+\frac{\left(rv_{z}^{\prime}\right)^{\prime}}{r}=\frac{p_{1}-p_{2}}{\rho\nu L}=\frac{\Delta p}{\eta L}=A,
+\]
+
+\end_inset
+
+где 
+\begin_inset Formula $\eta=\rho\nu$
+\end_inset
+
+ – динамическая вязкость.
+ Уравнение интегрируется методом разделения переменных
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnote{бро,
+ чье решение мы смотрим,
+ не заметил полной производной и начал решать как неоднородное}
+\end_layout
+
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+rv_{z}^{\prime} & =\int Ardr=\frac{Ar^{2}}{2}+C_{1}\\
+v_{z}^{\prime} & =\frac{Ar}{2}+\frac{C_{1}}{r}\\
+v_{z} & =\int\left[\frac{Ar}{2}+\frac{C_{1}}{r}\right]=\frac{Ar^{2}}{4}+C_{1}\ln r+C_{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдем 
+\begin_inset Formula $C_{1,2}$
+\end_inset
+
+ из гран.
+ условий.
+ Цилиндр 2 не движется вдоль 
+\begin_inset Formula $z$
+\end_inset
+
+,
+ а цилиндр 1 едет со скоростью 
+\begin_inset Formula $u$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\begin{cases}
+\frac{AR_{1}^{2}}{4}+C_{1}\ln R_{1}+C_{2}=u\\
+\frac{AR_{2}^{2}}{4}+C_{1}\ln R_{2}+C_{2}=0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Снова решая линейную систему,
+ получим:
+\begin_inset Formula 
+\[
+\begin{cases}
+C_{1}=\frac{u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)}{\ln\left(R_{1}/R_{2}\right)}\\
+C_{2}=-\frac{u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)}{\ln\left(R_{1}/R_{2}\right)}\ln R_{2}-\frac{A}{4}R_{2}^{2}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Значит,
+\begin_inset Formula 
+\begin{equation}
+v_{z}=\frac{A}{4}\left(r^{2}-R_{2}^{2}\right)+\frac{u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)}{\ln\left(R_{1}/R_{2}\right)}\ln\left(r/R_{2}\right)\label{eq:v_z}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Объемный расход
+\end_layout
+
+\begin_layout Standard
+Замечание:
+\begin_inset Formula 
+\[
+A=\frac{\Delta p}{\eta L}=\frac{p_{1}-p_{2}}{\rho\nu L}<0,
+\]
+
+\end_inset
+
+поскольку 
+\begin_inset Formula $p_{1}<p_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Объемный расход вычисляется как
+\begin_inset Formula 
+\begin{align*}
+Q & =\int v_{z}dS=\iint v_{z}rdrd\theta=2\pi\int_{R_{1}}^{R_{2}}v_{z}rdr\\
+ & =2\pi\int_{R_{1}}^{R_{2}}dr\left[\frac{A}{4}\left(r^{3}-rR_{2}^{2}\right)+\frac{u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)}{\ln\left(R_{1}/R_{2}\right)}r\ln\left(r/R_{2}\right)\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Введем переменную 
+\begin_inset Formula $x=r/R_{2}$
+\end_inset
+
+,
+ тогда 
+\begin_inset Formula $x\in\left[R_{1}/R_{2},1\right]$
+\end_inset
+
+,
+ 
+\begin_inset Formula $dr=R_{2}dx$
+\end_inset
+
+ и
+\begin_inset Formula 
+\begin{align*}
+Q & =2\pi R_{2}\int_{R_{1}/R_{2}}^{1}dx\left[\frac{AR_{2}^{3}}{4}\left(x^{3}-x\right)+\frac{u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)}{\ln\left(R_{1}/R_{2}\right)}R_{2}x\ln\left(x\right)\right]\\
+ & =2\pi R_{2}^{2}\int_{R_{1}/R_{2}}^{1}dx\left[\frac{AR_{2}^{2}}{4}\left(x^{3}-x\right)+\frac{u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)}{\ln\left(R_{1}/R_{2}\right)}x\ln\left(x\right)\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Интеграл с логарифмом возьмем по частям:
+\begin_inset Formula 
+\begin{align*}
+\int x\ln\left(x\right)dx & =\int\frac{1}{2}\ln\left(x\right)dx^{2}=\frac{x^{2}}{2}\ln\left(x\right)-\frac{1}{2}\int x^{2}d\ln x\\
+ & =\frac{x^{2}}{2}\ln\left(x\right)-\frac{1}{2}\int\frac{x^{2}}{x}dx=\frac{x^{2}}{2}\ln\left(x\right)-\frac{x^{2}}{4}\\
+ & =\frac{x^{2}}{2}\left(\ln\left(x\right)-\frac{1}{2}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Итог:
+\begin_inset Formula 
+\begin{align*}
+Q & =2\pi R_{2}^{2}\left[\frac{AR_{2}^{2}}{4}\frac{x^{2}}{2}\left(\frac{x^{2}}{2}-1\right)+\frac{u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)}{\ln\left(R_{1}/R_{2}\right)}\frac{x^{2}}{2}\left(\ln\left(x\right)-\frac{1}{2}\right)\right]_{x=R_{1}/R_{2}}^{x=1}\\
+ & =2\pi R_{2}^{2}\frac{x^{2}}{2}\left[\frac{AR_{2}^{2}}{4}\left(\frac{x^{2}}{2}-1\right)+\frac{u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)}{\ln\left(R_{1}/R_{2}\right)}\left(\ln\left(x\right)-\frac{1}{2}\right)\right]_{x=R_{1}/R_{2}}^{x=1}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для удобства посчитаем выражение в скобках в указанных пределах (отдельно от 
+\begin_inset Formula $2\pi R_{2}^{2}$
+\end_inset
+
+):
+\begin_inset Formula 
+\begin{align*}
+\frac{x^{2}}{2}\left[...\right]_{x=1} & =\frac{1}{2}\left[\frac{AR_{2}^{2}}{4}\left(\frac{1}{2}-1\right)+\frac{u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)}{\ln\left(R_{1}/R_{2}\right)}\left(-\frac{1}{2}\right)\right]\\
+ & =-\frac{AR_{2}^{2}}{16}-\frac{u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)}{4\ln\left(R_{1}/R_{2}\right)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\frac{x^{2}}{2}\left[...\right]_{x=R_{1}/R_{2}} & =\frac{R_{1}^{2}}{2R_{2}^{2}}\left[\frac{AR_{2}^{2}}{4}\left(\frac{1}{2}\frac{R_{1}^{2}}{R_{2}^{2}}-1\right)+\frac{u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)}{\ln\left(R_{1}/R_{2}\right)}\left(\ln\left(R_{1}/R_{2}\right)-\frac{1}{2}\right)\right]\\
+ & =\frac{R_{1}^{2}}{2R_{2}^{2}}\left[\frac{A}{4}\left(\frac{1}{2}R_{1}^{2}-R_{2}^{2}\right)+u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)-\frac{u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)}{2\ln\left(R_{1}/R_{2}\right)}\right]\\
+ & =\frac{R_{1}^{2}}{2R_{2}^{2}}\left[u-\frac{A}{8}R_{1}^{2}-\frac{u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)}{2\ln\left(R_{1}/R_{2}\right)}\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Теперь можно подставить пределы в уравнение
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnote{полученный ответ совпадает с ответом чела}
+\end_layout
+
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align}
+\frac{Q}{2\pi} & =-\frac{AR_{2}^{4}}{16}-R_{2}^{2}\frac{u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)}{4\ln\left(R_{1}/R_{2}\right)}\nonumber \\
+ & -\frac{R_{1}^{2}}{2}\left[u-\frac{A}{8}R_{1}^{2}-\frac{u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)}{2\ln\left(R_{1}/R_{2}\right)}\right]\nonumber \\
+ & =-\frac{uR_{1}^{2}}{2}-\frac{A}{16}\left(R_{2}^{4}-R_{1}^{4}\right)-\frac{u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)}{4\ln\left(R_{1}/R_{2}\right)}\left(R_{2}^{2}-R_{1}^{2}\right)\label{eq:volume_flow}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Здесь в нижнем пределе занесли 
+\begin_inset Formula $R_{2}^{2}$
+\end_inset
+
+ в скобки.
+ Попробуем проанализировать ответ.
+ Если устремить радиус первого цилиндра к нулю (а точнее,
+ 
+\begin_inset Formula $R_{1}/R_{2}\ll1$
+\end_inset
+
+),
+ получим:
+\begin_inset Formula 
+\begin{align*}
+\frac{Q}{2\pi} & =-\frac{A}{16}R_{2}^{4}\\
+Q & =\frac{\pi}{8}\frac{\left(-\Delta p\right)}{\eta L}R_{2}^{4}>0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Полученная формула совпадает с формулой Пуазейля.
+\end_layout
+
+\begin_layout Section*
+Средняя скорость
+\end_layout
+
+\begin_layout Standard
+Среднюю скорость
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnote{у нас,
+ кстати,
+ это называется superficial velocity (поверхностной скоростью или типа того)}
+\end_layout
+
+\end_inset
+
+ определим как:
+\begin_inset Formula 
+\[
+v_{s}=\frac{Q}{S},
+\]
+
+\end_inset
+
+где 
+\begin_inset Formula $S=\pi\left(R_{2}^{2}-R_{1}^{2}\right)$
+\end_inset
+
+ – сечение,
+ через которое течет жидкость.
+ Подставляя поток из 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:volume_flow"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ получим:
+\begin_inset Formula 
+\begin{align}
+v_{s} & =-\frac{2\pi uR_{1}^{2}}{2\pi\left(R_{2}^{2}-R_{1}^{2}\right)}-\frac{2\pi A}{16}\frac{\left(R_{2}^{4}-R_{1}^{4}\right)}{\pi\left(R_{2}^{2}-R_{1}^{2}\right)}-2\pi\frac{u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)}{4\ln\left(R_{1}/R_{2}\right)}\frac{\left(R_{2}^{2}-R_{1}^{2}\right)}{\pi\left(R_{2}^{2}-R_{1}^{2}\right)}\nonumber \\
+ & =-\frac{uR_{1}^{2}}{R_{2}^{2}-R_{1}^{2}}-\frac{A}{8}\left(R_{2}^{2}+R_{1}^{2}\right)-\frac{u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)}{2\ln\left(R_{1}/R_{2}\right)}\label{eq:v_s}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Коэффициент сопротивления
+\end_layout
+
+\begin_layout Standard
+Плотность поверхностных сил:
+\begin_inset Formula 
+\[
+\vec{p}_{n}=-p\vec{n}+\vec{n}\tau
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Сила трения действует вдоль поверхности,
+ поэтому нам интересна компонента плотности поверхностных сил вдоль 
+\begin_inset Formula $z$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\left(\vec{p}_{n}\right)_{z}=\left(-p\vec{n}+\vec{n}\tau\right)\vec{n}_{z}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Поскольку 
+\begin_inset Formula $\vec{n}$
+\end_inset
+
+ – это нормаль к поверхности,
+ она равна 
+\begin_inset Formula $\vec{n}_{r}$
+\end_inset
+
+ для стержня 2 и 
+\begin_inset Formula $-\vec{n}_{r}$
+\end_inset
+
+ для стержня 1,
+ значит,
+ 
+\begin_inset Formula $-p\left(\vec{n}_{r}\vec{n}_{z}\right)=0$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\pm\vec{n}_{r}\tau\vec{n}_{z}=\pm\tau_{rz}$
+\end_inset
+
+.
+ В свою очередь,
+\begin_inset Formula 
+\[
+\tau_{rz}=\eta\left(\partial_{z}v_{r}+\partial_{r}v_{z}\right)=\eta\frac{dv_{z}}{dr}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Подставим выражение 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:v_z"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ для 
+\begin_inset Formula $v_{z}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\tau_{rz} & =\eta\frac{d}{dr}\left[\frac{A}{4}\left(r^{2}-R_{2}^{2}\right)+\frac{u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)}{\ln\left(R_{1}/R_{2}\right)}\ln\left(r/R_{2}\right)\right]\\
+ & =\eta\left[\frac{A}{4}\left(2r\right)+\frac{u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)}{\ln\left(R_{1}/R_{2}\right)}\frac{1}{r}\right]\\
+ & =\eta\left[\frac{Ar}{2}+\frac{u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)}{\ln\left(R_{1}/R_{2}\right)}\frac{1}{r}\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Рассмотрим трение об обе стенки на участке длиной 
+\begin_inset Formula $L$
+\end_inset
+
+.
+ Сила трения связана со своей плотностью так:
+\begin_inset Formula 
+\[
+F_{z}=\int\left(\vec{p}_{n}\right)_{z}dS,
+\]
+
+\end_inset
+
+где интеграл ведется по цилиндрам 
+\begin_inset Formula $r=R_{1,2}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $z\in\left(0,L\right)$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\theta\in\left(0,2\pi\right)$
+\end_inset
+
+.
+ Поскольку подынтегральная функция не зависит от 
+\begin_inset Formula $z$
+\end_inset
+
+ и 
+\begin_inset Formula $\theta$
+\end_inset
+
+,
+ интеграл берется легко:
+ 
+\begin_inset Formula 
+\[
+\int\left(\vec{p}_{n}\right)_{z}dS=S_{2}\tau_{rz}\left(R_{2}\right)-S_{1}\tau_{rz}\left(R_{1}\right)=2\pi L\left[R_{2}\tau_{rz}\left(R_{2}\right)-R_{1}\tau_{rz}\left(R_{1}\right)\right],\,i=1,2
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+F_{z} & =2\pi L\eta\left[\left(\frac{AR_{2}}{2}+\frac{u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)}{\ln\left(R_{1}/R_{2}\right)}\frac{1}{R_{2}}\right)R_{2}-\left(\frac{AR_{1}}{2}+\frac{u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)}{\ln\left(R_{1}/R_{2}\right)}\frac{1}{R_{1}}\right)R_{1}\right]\\
+ & =2\pi L\eta\left[\frac{AR_{2}^{2}}{2}+\frac{u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)}{\ln\left(R_{1}/R_{2}\right)}-\frac{AR_{1}^{2}}{2}-\frac{u-\frac{A}{4}\left(R_{1}^{2}-R_{2}^{2}\right)}{\ln\left(R_{1}/R_{2}\right)}\right]\\
+ & =2\pi L\eta\times\frac{A}{2}\left(R_{2}^{2}-R_{1}^{2}\right)=\pi L\eta A\left(R_{2}^{2}-R_{1}^{2}\right)=\pi\eta\Delta p\left(R_{2}^{2}-R_{1}^{2}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Заметим,
+ что поскольку 
+\begin_inset Formula $\Delta p<0$
+\end_inset
+
+,
+ то и 
+\begin_inset Formula $F_{z}<0$
+\end_inset
+
+,
+ как и положено для трения.
+ Также получилось,
+ что в ответ не входит длина 
+\begin_inset Formula $L$
+\end_inset
+
+.
+ Посчитаем коэффициент трения:
+\begin_inset Formula 
+\[
+C_{F}=\frac{\left|F_{z}\right|}{\rho v_{s}^{2}S/2},
+\]
+
+\end_inset
+
+где 
+\begin_inset Formula $S=2\pi\left(R_{1}+R_{2}\right)L$
+\end_inset
+
+ – полная площадь боковой поверхности.
+ Отсюда
+\begin_inset Formula 
+\begin{align*}
+C_{F} & =\frac{2\pi\eta\Delta p\left(R_{2}^{2}-R_{1}^{2}\right)}{2\pi\left(R_{1}+R_{2}\right)Lv_{s}^{2}}=\frac{\eta\Delta p\left(R_{2}-R_{1}\right)}{Lv_{s}^{2}}\\
+ & =\frac{\eta\Delta p\left(R_{2}-R_{1}\right)}{Lv_{s}^{2}},
+\end{align*}
+
+\end_inset
+
+где 
+\begin_inset Formula $v_{s}$
+\end_inset
+
+ определяется формулой 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:v_s"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ Подставлять 
+\begin_inset Formula $v_{s}$
+\end_inset
+
+ я смысла не вижу,
+ пока не введем критерии подобия.
+ Потом (завтра) попробуем через них выразить.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 671b0571a423c31ba072c9dbbc17b790.jpg
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
