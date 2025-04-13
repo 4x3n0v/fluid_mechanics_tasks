@@ -123,10 +123,51 @@
 \begin_inset Formula $r$
 \end_inset
 
-:
+ (предполагаем невязкую несжимаемую жидкость):
 \begin_inset Formula 
 \[
-\partial_{t}\left(\rho v_{i}\right)+\nabla_{j}\left(\rho v_{i}v_{j}+p\delta_{ij}\right)=\rho g_{i}\left(r\right).
+\partial_{t}v_{i}+v_{j}\nabla_{j}v_{i}+\frac{1}{\rho}\nabla_{i}p=g_{i}\left(r\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Введем возмущение:
+\begin_inset Formula 
+\[
+v_{i}=V_{i}+u_{i},\,p=P+p',
+\]
+
+\end_inset
+
+откуда
+\begin_inset Formula 
+\[
+\partial_{t}u_{i}+\underline{V_{j}\nabla_{j}V_{i}}+u_{j}\nabla_{j}V_{i}+V_{j}\nabla_{j}u_{i}+u_{j}\nabla_{j}u_{i}+\underline{\frac{1}{\rho}\nabla_{i}P}+\frac{1}{\rho}\nabla_{i}p'=\underline{\rho g_{i}\left(r\right)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Подчеркнутые штуки сокращаются по определению скорости 
+\begin_inset Formula $V$
+\end_inset
+
+ и давления 
+\begin_inset Formula $P$
+\end_inset
+
+,
+ которые являются решением невозмущенного уравнения:
+\begin_inset Formula 
+\[
+\partial_{t}u_{i}+u_{j}\nabla_{j}V_{i}+V_{j}\nabla_{j}u_{i}+u_{j}\nabla_{j}u_{i}+\frac{1}{\rho}\nabla_{i}p'=0.
 \]
 
 \end_inset
@@ -139,95 +180,18 @@
 \begin_inset Formula $e_{mni}\nabla_{n}\left(...\right)_{i}$
 \end_inset
 
- от этого уравнения:
+ от этого уравнения,
+ вводя завихренность 
+\begin_inset Formula $\omega_{m}=e_{mni}\nabla_{n}u_{i}$
+\end_inset
+
+:
 \begin_inset Formula 
-\[
-\partial_{t}e_{mni}\nabla_{n}\left(\rho v_{i}\right)+e_{mni}\nabla_{n}\nabla_{j}\left(\rho v_{i}v_{j}+p\delta_{ij}\right)=e_{mni}\nabla_{n}\left[\rho g_{i}\left(r\right)\right].
-\]
+\begin{align*}
+\partial_{t}e_{mni}\nabla_{n}u_{i}+e_{mni}\nabla_{n}\left(u_{j}\nabla_{j}V_{i}+V_{j}\nabla_{j}u_{i}+u_{j}\nabla_{j}u_{i}\right) & =0\\
+\partial_{t}\omega_{m}+e_{mni}\nabla_{n}\nabla_{j}\left(u_{j}V_{i}+V_{j}u_{i}+u_{j}u_{i}\right) & =0
+\end{align*}
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Введем завихренность 
-\begin_inset Formula $\omega_{m}=e_{mni}\nabla_{n}v_{i}$
-\end_inset
-
-,
- будем считать,
- что жидкость несжимаемая,
- т.е.
- плотность – константа.
- Кроме того,
- заметим,
- что 
-\begin_inset Formula $e_{mni}\nabla_{n}\nabla_{j}\delta_{ij}=e_{mni}\nabla_{n}\nabla_{i}=0$
-\end_inset
-
- – свертка антисимметричного символа 
-\begin_inset Formula $e_{mni}$
-\end_inset
-
- с симметричным тензором 
-\begin_inset Formula $\nabla_{n}\nabla_{i}$
-\end_inset
-
- (a.k.a ротор градиента равен нулю).
- Аналогично,
- потенциальность силы 
-\begin_inset Formula $g_{i}$
-\end_inset
-
- означает,
- что эта сила может быть представлена как градиент потенциала 
-\begin_inset Formula $g_{i}=\nabla_{i}\varphi$
-\end_inset
-
-,
- поэтому ротор от нее тоже ноль.
-\end_layout
-
-\begin_layout Standard
-Тогда:
-\begin_inset Formula 
-\[
-\partial_{t}\omega_{m}+e_{mni}\nabla_{n}\nabla_{j}\left(v_{i}v_{j}\right)=0.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Раскроем скобки 
-\begin_inset Formula $\nabla_{j}\left(v_{i}v_{j}\right)=v_{j}\nabla_{j}v_{i}+v_{i}\nabla_{j}v_{j}=v_{j}\nabla_{j}v_{i}$
-\end_inset
-
-,
- второе слагаемое равно нулю,
- потому что среду считаем несжимаемой.
- Отсюда:
-\begin_inset Formula 
-\[
-\partial_{t}\omega_{m}+e_{mni}\nabla_{n}\left(v_{j}\nabla_{j}v_{i}\right)=0.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Еще раз раскроем 
-\begin_inset Formula $\nabla_{n}\left(v_{j}\nabla_{j}v_{i}\right)=\left(\nabla_{n}v_{j}\right)\left(\nabla_{j}v_{i}\right)+v_{j}\nabla_{n}\nabla_{j}v_{i}$
-\end_inset
-
-.
- 
-\begin_inset Formula $e_{mni}\left(\nabla_{n}v_{j}\right)\left(\nabla_{j}v_{i}\right)$
 \end_inset
 
 
