@@ -113,6 +113,10 @@
 
 \begin_body
 
+\begin_layout Section
+Вывод уравнения на завихренность
+\end_layout
+
 \begin_layout Standard
 Запишем уравнение Навье-Стокса для течения под действием потенциальной силы 
 \begin_inset Formula $g$
@@ -135,18 +139,28 @@
 \end_layout
 
 \begin_layout Standard
-Введем возмущение:
+Возьмем ротор (+ введем 
+\begin_inset Formula $\omega_{m}=e_{mni}\nabla_{n}v_{i}$
+\end_inset
+
+) от уравнения:
 \begin_inset Formula 
-\[
-v_{i}=V_{i}+u_{i},\,p=P+p',
-\]
+\begin{equation}
+\partial_{t}\omega_{m}+e_{mni}\nabla_{n}v_{j}\nabla_{j}v_{i}=0.\label{eq:eq-vort-difficult}
+\end{equation}
 
 \end_inset
 
-откуда
+
+\end_layout
+
+\begin_layout Standard
+Ротор градиента давления и потенциальной силы равны 0,
+ потому что ротор градиента это 0.
+ Рассмотрим компоненту векторного произведения:
 \begin_inset Formula 
 \[
-\partial_{t}u_{i}+\underline{V_{j}\nabla_{j}V_{i}}+u_{j}\nabla_{j}V_{i}+V_{j}\nabla_{j}u_{i}+u_{j}\nabla_{j}u_{i}+\underline{\frac{1}{\rho}\nabla_{i}P}+\frac{1}{\rho}\nabla_{i}p'=\underline{\rho g_{i}\left(r\right)}.
+\left(v\times\left[\nabla\times v\right]\right)_{i}=e_{ijk}v_{j}e_{kmn}\nabla_{m}v_{n}.
 \]
 
 \end_inset
@@ -155,46 +169,306 @@ v_{i}=V_{i}+u_{i},\,p=P+p',
 \end_layout
 
 \begin_layout Standard
-Подчеркнутые штуки сокращаются по определению скорости 
-\begin_inset Formula $V$
-\end_inset
-
- и давления 
-\begin_inset Formula $P$
-\end_inset
-
-,
- которые являются решением невозмущенного уравнения:
+Поскольку
 \begin_inset Formula 
 \[
-\partial_{t}u_{i}+u_{j}\nabla_{j}V_{i}+V_{j}\nabla_{j}u_{i}+u_{j}\nabla_{j}u_{i}+\frac{1}{\rho}\nabla_{i}p'=0.
+e_{ijk}e_{kmn}=\delta_{im}\delta_{jn}-\delta_{in}\delta_{jm},
 \]
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Возьмем ротор 
-\begin_inset Formula $e_{mni}\nabla_{n}\left(...\right)_{i}$
-\end_inset
-
- от этого уравнения,
- вводя завихренность 
-\begin_inset Formula $\omega_{m}=e_{mni}\nabla_{n}u_{i}$
-\end_inset
-
-:
+получим:
 \begin_inset Formula 
 \begin{align*}
-\partial_{t}e_{mni}\nabla_{n}u_{i}+e_{mni}\nabla_{n}\left(u_{j}\nabla_{j}V_{i}+V_{j}\nabla_{j}u_{i}+u_{j}\nabla_{j}u_{i}\right) & =0\\
-\partial_{t}\omega_{m}+e_{mni}\nabla_{n}\nabla_{j}\left(u_{j}V_{i}+V_{j}u_{i}+u_{j}u_{i}\right) & =0
+e_{ijk}v_{j}e_{kmn}\nabla_{m}v_{n} & =\left(\delta_{im}\delta_{jn}-\delta_{in}\delta_{jm}\right)v_{j}\nabla_{m}v_{n}\\
+ & =v_{n}\nabla_{i}v_{n}-v_{j}\nabla_{j}v_{i}\\
+ & =v_{j}\nabla_{i}v_{j}-v_{j}\nabla_{j}v_{i}\\
+ & =\frac{1}{2}\nabla_{i}\left(v_{j}v_{j}\right)-v_{j}\nabla_{j}v_{i}.
 \end{align*}
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Отсюда следует
+\begin_inset Formula 
+\[
+\begin{split}v_{j}\nabla_{j}v_{i} & =\frac{1}{2}\nabla_{i}\left(v_{j}v_{j}\right)-\left(v\times\left[\nabla\times v\right]\right)_{i}\\
+ & =\frac{1}{2}\nabla_{i}\left(v^{2}\right)-\left(v\times\omega\right)_{i}\\
+ & =\frac{1}{2}\nabla_{i}\left(v^{2}\right)-e_{ijk}v_{j}\omega_{k}.
+\end{split}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Подставляем и учитываем,
+ что ротор градиента 0:
+\begin_inset Formula 
+\[
+\begin{split}e_{mni}\nabla_{n}v_{j}\nabla_{j}v_{i} & =e_{mni}\nabla_{n}\left(\frac{1}{2}\nabla_{i}\left(v^{2}\right)-e_{ijk}v_{j}\omega_{k}\right)\\
+ & =-e_{mni}\nabla_{n}e_{ijk}v_{j}\omega_{k}\\
+ & =-\left(\delta_{mj}\delta_{nk}-\delta_{mk}\delta_{nj}\right)\nabla_{n}\left(v_{j}\omega_{k}\right)\\
+ & =-\nabla_{k}\left(v_{m}\omega_{k}\right)+\nabla_{j}\left(v_{j}\omega_{m}\right)\\
+ & =-\omega_{k}\nabla_{k}v_{m}-v_{m}\nabla_{k}\omega_{k}+v_{j}\nabla_{j}\omega_{m}+\cancelto{0}{\omega_{m}\nabla_{j}v_{j}}.
+\end{split}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Поскольку
+\begin_inset Formula 
+\[
+\nabla_{k}\omega_{k}=e_{kij}\nabla_{k}\nabla_{i}v_{j}=0,
+\]
+
+\end_inset
+
+окончательно получим:
+\begin_inset Formula 
+\[
+e_{mni}\nabla_{n}v_{j}\nabla_{j}v_{i}=-\omega_{k}\nabla_{k}v_{m}+v_{j}\nabla_{j}\omega_{m}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Подставим это в 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:eq-vort-difficult"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+\partial_{t}\omega-\left(\omega\nabla\right)v+\left(v\nabla\right)\omega=0.\label{eq:vorticity}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Возмущения
+\end_layout
+
+\begin_layout Standard
+Представим скорость возмущенного течения как
+\begin_inset Formula 
+\[
+v=U+u',
+\]
+
+\end_inset
+
+где 
+\begin_inset Formula $U=\left(U_{x},0,0\right)$
+\end_inset
+
+,
+ 
+\begin_inset Formula $u'$
+\end_inset
+
+ – малое возмущение.
+ Подставим в уравнение 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:vorticity"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\partial_{t}\omega-\left(\omega\nabla\right)\left(U+u'\right)+\left(\left(U+u'\right)\nabla\right)\omega & =0\\
+\partial_{t}\omega-\underset{2\text{й поядок}}{\underbrace{\left(\omega\nabla\right)u'}}+U_{x}\nabla_{x}\omega+\underbrace{\left(u'\nabla\right)\omega} & =0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Линеаризуем полученное уравнение,
+ учитывая,
+ что 
+\begin_inset Formula $\omega$
+\end_inset
+
+ такого же порядка малости,
+ что и 
+\begin_inset Formula $u'$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+\partial_{t}\omega+U_{x}\nabla_{x}\omega=0.\label{eq:linearized}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Решить это уравнение можно методом характеристик.
+ Запишем уравнение характеристик для 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:linearized"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\frac{dx}{dt}=U_{x},
+\]
+
+\end_inset
+
+решая которое получим 
+\begin_inset Formula $x=U_{x}t+F_{1}$
+\end_inset
+
+,
+ где 
+\begin_inset Formula $F_{1}$
+\end_inset
+
+ – первый интеграл.
+ Суть метода характеристик заключается в том,
+ что решение можно выразить как функцию всех первых интегралов (в нашем случае у нас только один первый интеграл) 
+\begin_inset Formula $F_{1}=x-U_{x}t$
+\end_inset
+
+.
+ Отсюда получаем общее решение:
+\begin_inset Formula 
+\[
+\omega_{j}\left(x,y,z,t\right)=\omega_{j}\left(x-U_{x}t,y,z\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Теперь посмотрим на соотношение завихренности и скорости:
+ 
+\begin_inset Formula $\omega_{j}=e_{jkm}\nabla_{k}v_{m}=e_{jkm}\nabla_{k}\left(U_{m}+u'_{m}\right)=e_{jkm}\nabla_{k}u'_{m}$
+\end_inset
+
+ (отсюда видно,
+ что 
+\begin_inset Formula $\omega$
+\end_inset
+
+ связана с 
+\begin_inset Formula $u'$
+\end_inset
+
+,
+ но не с 
+\begin_inset Formula $U$
+\end_inset
+
+),
+ тогда:
+\begin_inset Formula 
+\begin{equation}
+\omega_{j}\left(x-U_{x}t,y,z\right)=e_{jkm}\nabla_{k}u'_{m}\left(x,y,z,t\right).\label{eq:vorticity_vs_u}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Поскольку оператор 
+\begin_inset Formula $\nabla_{k}$
+\end_inset
+
+ действует по пространству,
+ но не по времени,
+ можно заключить,
+ что чтобы 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:vorticity_vs_u"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ выполнялось в любой момент времени,
+ нужно,
+ чтобы скорость зависела от времени так же,
+ как и завихренность:
+\begin_inset Formula 
+\[
+u'_{m}\left(x,y,z,t\right)=u'_{m}\left(x-U_{x}t,y,z\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Это означает,
+ что возмущение,
+ которое было в момент времени 0 в точке 
+\begin_inset Formula $x$
+\end_inset
+
+,
+ просто переносится со скоростью 
+\begin_inset Formula $U_{x}$
+\end_inset
+
+ вдоль оси 
+\begin_inset Formula $x$
+\end_inset
+
+,
+ без нарастания амплитуды.
+ Значит,
+ в линейном приближении завихренность не влияет на устойчивость.
 \end_layout
 
 \end_body
