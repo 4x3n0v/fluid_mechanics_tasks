@@ -1,0 +1,802 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extarticle
+\begin_preamble
+%\usepackage{tempora}
+\usepackage[tableposition=top,font=small,justification=centering]{caption}
+\usepackage{indentfirst}
+\pagestyle{plain}
+\usepackage{fontspec} 
+\defaultfontfeatures{Ligatures={TeX},Renderer=Basic} 
+\setmainfont[Ligatures={TeX,Historic}]{Times New Roman}[NFSSFamily=ntxtlf]
+
+\usepackage{ccaption}
+\captiondelim{. }
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children no
+\language russian
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format pdf5
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize 14
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style russian
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Вывод уравнения на завихренность
+\end_layout
+
+\begin_layout Standard
+Запишем уравнение Навье-Стокса для течения под действием силы тяжести 
+\begin_inset Formula $g$
+\end_inset
+
+ (предполагаем невязкую несжимаемую жидкость):
+\begin_inset Formula 
+\[
+\partial_{t}\vec{v}+\left(\vec{v}\nabla\right)\vec{v}+\frac{1}{\rho}\nabla p=\vec{g},
+\]
+
+\end_inset
+
+ где 
+\begin_inset Formula $\vec{g}=\left(0,g,0\right)$
+\end_inset
+
+ Это уравнение выполняется как для воздуха 
+\begin_inset Formula $y>\eta\left(x,t\right)$
+\end_inset
+
+,
+ так и для воды 
+\begin_inset Formula $y<\eta\left(x,t\right)$
+\end_inset
+
+.
+ Рассмотрим малые волны,
+ тогда для воздуха или воды можно записать:
+\begin_inset Formula 
+\[
+\begin{split} & \vec{v}=\vec{u}_{0}+\vec{u};\\
+ & p=p_{0}+p',
+\end{split}
+\]
+
+\end_inset
+
+где 
+\begin_inset Formula $\vec{u}_{0}=\left(u_{0},0,0\right)$
+\end_inset
+
+,
+ 
+\begin_inset Formula $u_{0}$
+\end_inset
+
+,
+ – не зависит от времени и координаты,
+ 
+\begin_inset Formula $\frac{1}{\rho}\nabla p_{0}-\vec{g}=0$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\vec{u}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $p'$
+\end_inset
+
+ – малые поправки.
+ Подстановка в уравнение и пренебрежение 2ым порядком:
+\begin_inset Formula 
+\begin{equation}
+\begin{split}\partial_{t}\vec{u}_{0}+\partial_{t}\vec{u}+\left(\vec{u}_{0}\nabla\right)\vec{u}+\left(\vec{u}\nabla\right)\vec{u}_{0}+\left(\vec{u}\nabla\right)\vec{u}+\frac{1}{\rho}\left(\nabla p_{0}+\nabla p'\right)-\vec{g} & =0;\\
+\partial_{t}\vec{u}+\left(\vec{u}_{0}\nabla\right)\vec{u}+\frac{1}{\rho}\nabla p' & =0;\\
+\partial_{t}\vec{u}+u_{0}\partial_{x}\vec{u}+\frac{1}{\rho}\nabla p' & =0.
+\end{split}
+\label{eq:linearized}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Граничные условия
+\end_layout
+
+\begin_layout Subsection
+Условия на границе раздела фаз
+\end_layout
+
+\begin_layout Standard
+Кинематическое гран.
+ условие на границе раздела:
+\begin_inset Formula 
+\begin{equation}
+\frac{d\eta}{dt}=\partial_{t}\eta+u_{0}\partial_{x}\eta=u_{y}\left(y=\eta\right)\label{eq:kinetic}
+\end{equation}
+
+\end_inset
+
+означает непрерывность вертикальной скорости при переходе через границу (скорость границе = скорости вблизи границы).
+ Напомню,
+ что эти рассуждения справедливы и для воздуха и для воды (т.е.
+ если подходим к границе хоть сверху,
+ хоть снизу).
+\end_layout
+
+\begin_layout Standard
+Динамическое гран.
+ условие:
+\begin_inset Formula 
+\begin{equation}
+p'_{1}-p'_{2}=\sigma\partial_{x}^{2}\eta+g\left(\rho_{2}-\rho_{1}\right)\eta=0,\label{eq:dynamic}
+\end{equation}
+
+\end_inset
+
+где 
+\begin_inset Formula $1$
+\end_inset
+
+,
+\begin_inset Formula $2$
+\end_inset
+
+ – индексы для воздуха и воды соответственно,
+ 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ – коэффициент поверхностного натяжения.
+ Это условие означает,
+ что сила на единицу площади,
+ действующая со стороны воздуха равна силе,
+ действующей со стороны воды:
+\begin_inset Formula 
+\[
+p'_{1}+g\rho_{1}\eta=p'_{2}+\sigma\partial_{x}^{2}\eta+g\rho_{2}\eta.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Условия на верхней и нижней границах
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:low_high_cond"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Верхняя и нижняя граница ограничены стенками,
+ поэтому выполняется условие непротекания
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnote{Если поставить в задаче две стенки сверху и снизу.
+ Это делать не обязательно,
+ если предположить,
+ что $h_{1,2} 
+\backslash
+gg 
+\backslash
+eta$,
+ тогда это будет не условие непротекания,
+ а условие зануления колебаний скорости $
+\backslash
+vec{u} = 
+\backslash
+vec{v} - 
+\backslash
+vec{u}_{0} 
+\backslash
+rightarrow 0$ при $y 
+\backslash
+rightarrow h_{1,2} 
+\backslash
+gg 
+\backslash
+eta$}
+\end_layout
+
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\begin{split} & u_{1y}\left(y=h_{1}\right)=0;\\
+ & u_{2y}\left(y=-h_{2}\right)=0.
+\end{split}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Фурье (или случай бегущей волны)
+\end_layout
+
+\begin_layout Standard
+Можно трактовать это как взятие фурье по координате 
+\begin_inset Formula $x$
+\end_inset
+
+ и времени 
+\begin_inset Formula $t$
+\end_inset
+
+,
+ либо как подстановку величин в виде бегущей волны 
+\begin_inset Formula $e^{ikx-i\omega t}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+\begin{split}\eta\left(x,t\right) & =\hat{\eta}e^{ikx-i\omega t};\\
+\vec{u}\left(x,y,t\right) & =\vec{\hat{u}}\left(y\right)e^{ikx-i\omega t};\\
+p'\left(x,y,t\right) & =\hat{p}'\left(y\right)e^{ikx-i\omega t},
+\end{split}
+\label{eq:monocrome-wave}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Подставим это в систему 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:linearized"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ (а.к.а возьмем фурье по 
+\begin_inset Formula $x$
+\end_inset
+
+,
+ 
+\begin_inset Formula $t$
+\end_inset
+
+):
+\begin_inset Formula 
+\[
+-i\omega\vec{\hat{u}}+iku_{0}\vec{\hat{u}}+\frac{1}{\rho}\nabla_{y}\hat{p}'=0,
+\]
+
+\end_inset
+
+где 
+\begin_inset Formula $\nabla_{y}=\left(ik,d/dy,0\right)$
+\end_inset
+
+,
+ поскольку при производной по 
+\begin_inset Formula $x$
+\end_inset
+
+ вылезет 
+\begin_inset Formula $ik$
+\end_inset
+
+,
+ а на производную по 
+\begin_inset Formula $y$
+\end_inset
+
+ ничего не повлияет.
+ Распишем это через единичные векторы вдоль осей 
+\begin_inset Formula $\vec{n}_{x,y}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\nabla_{y}\hat{p}'=ik\hat{p}'\vec{n}_{x}+\frac{d\hat{p}'}{dy}\vec{n}_{y},
+\]
+
+\end_inset
+
+тогда окончательно
+\begin_inset Formula 
+\[
+\left(-i\omega+iku_{0}\right)\vec{\hat{u}}+\frac{1}{\rho}ik\hat{p}'\vec{n}_{x}+\frac{1}{\rho}\frac{d\hat{p}'}{dy}\vec{n}_{y}=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Запишем в координатах:
+\begin_inset Formula 
+\begin{equation}
+\begin{cases}
+\left(-i\omega+iku_{0}\right)\hat{u}_{x}+ik\frac{1}{\rho}\hat{p}'=0;\\
+\left(-i\omega+iku_{0}\right)\hat{u}_{y}+\frac{1}{\rho}\frac{d\hat{p}'}{dy}=0.
+\end{cases}\label{eq:coords}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Условие неразрывности 
+\begin_inset Formula $\nabla u=\partial_{x}u_{x}+\partial_{y}u_{y}=0$
+\end_inset
+
+ дает:
+\begin_inset Formula 
+\begin{equation}
+ik\hat{u}_{x}+\frac{d\hat{u}_{y}}{dy}=0.\label{eq:no_divergence}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Из уравнения 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:coords"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ выразим компоненты скорости 
+\begin_inset Formula $\hat{u}_{x,y}$
+\end_inset
+
+:
+ 
+\begin_inset Formula 
+\begin{equation}
+\begin{cases}
+\hat{u}_{x}=-\frac{1}{\rho}\frac{ik\hat{p}'}{-i\omega+iku_{0}}=\frac{1}{\rho}\frac{k\hat{p}'}{\omega-ku_{0}};\\
+\hat{u}_{y}=-\frac{1}{\rho}\frac{\frac{d\hat{p}'}{dy}}{-i\omega+iku_{0}}=\frac{-i}{\rho}\frac{\frac{d\hat{p}'}{dy}}{\omega-ku_{0}},
+\end{cases}\label{eq:velocity_via_pressure}
+\end{equation}
+
+\end_inset
+
+и подставим в 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:no_divergence"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\begin{split} & ik\left(\frac{1}{\rho}\frac{k\hat{p}'}{\omega-ku_{0}}\right)+\frac{d}{dy}\left(\frac{-i}{\rho}\frac{\frac{d\hat{p}'}{dy}}{\omega-ku_{0}}\right)=0;\\
+ & k^{2}\hat{p}'-\frac{d^{2}\hat{p}'}{dy^{2}}=0.
+\end{split}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Полученное уравнение на 
+\begin_inset Formula $\hat{p}'\left(y\right)$
+\end_inset
+
+ это уравнение Лапласа,
+ оно имеет общее решение 
+\begin_inset Formula $\hat{p}'=Ae^{ky}+Be^{-ky}$
+\end_inset
+
+.
+ Уравнение выполняется как в воздухе,
+ так и в воде,
+ но давление не обязано быть одинаковым (есть поверхностное натяжение),
+ поэтому запишем для каждой фазы свое решение:
+\begin_inset Formula 
+\[
+\hat{p}'_{1,2}=A_{1,2}e^{ky}+B_{1,2}e^{-ky}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Из условий на верхней и нижней границах 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "subsec:low_high_cond"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ следует,
+ что 
+\begin_inset Formula 
+\[
+\begin{split} & \frac{d\hat{p}'_{1}}{dy}\left(y=h_{1}\right)=0;\\
+ & \frac{d\hat{p}'_{2}}{dy}\left(y=-h_{2}\right)=0,
+\end{split}
+\]
+
+\end_inset
+
+откуда
+\begin_inset Formula 
+\[
+\begin{cases}
+kA_{1}e^{kh_{1}}-kB_{1}e^{-kh_{1}}=0;\\
+kA_{2}e^{-kh_{2}}-kB_{2}e^{kh_{2}}=0.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Выразим 
+\begin_inset Formula $B_{i}$
+\end_inset
+
+ через 
+\begin_inset Formula $A_{i}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\begin{cases}
+B_{1}=A_{1}e^{2kh_{1}};\\
+B_{2}=A_{2}e^{-2kh_{2}}.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Теперь давление содержит меньше неизвестных констант:
+\begin_inset Formula 
+\[
+\begin{cases}
+\hat{p}'_{1}=A_{1}\left(e^{ky}+e^{-ky+2kh_{1}}\right);\\
+\hat{p}'_{2}=A_{2}\left(e^{ky}+e^{-ky-2kh_{2}}\right).
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Подставим то,
+ что получилось в формулы для скоростей 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:velocity_via_pressure"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ Для воздуха:
+\begin_inset Formula 
+\[
+\begin{cases}
+\hat{u}_{1x}\left(y\right)=\frac{1}{\rho_{1}}\frac{kA_{1}\left(e^{ky}+e^{-ky+2kh_{1}}\right)}{\omega-ku_{01}};\\
+\hat{u}_{1y}\left(y\right)=\frac{-i}{\rho_{1}}\frac{kA_{1}\left(e^{ky}-e^{-ky+2kh_{1}}\right)}{\omega-ku_{01}}.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для воды:
+\begin_inset Formula 
+\[
+\begin{cases}
+\hat{u}_{2x}\left(y\right)=\frac{1}{\rho_{2}}\frac{kA_{2}\left(e^{ky}+e^{-ky-2kh_{2}}\right)}{\omega-ku_{02}};\\
+\hat{u}_{2y}\left(y\right)=\frac{-i}{\rho_{2}}\frac{kA_{2}\left(e^{ky}-e^{-ky-2kh_{2}}\right)}{\omega-ku_{02}}.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Далее мы хотим рассмотреть гран.
+ условие 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:kinetic"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ В парадигме 
+\begin_inset Quotes rld
+\end_inset
+
+давайте рассмотрим бегущую волну
+\begin_inset Quotes rrd
+\end_inset
+
+ это выглядит так 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnote{Если рассматривать через фурье,
+ правая часть будет стоять под интегралом по $k$,
+ $
+\backslash
+omega$.
+ Левую часть так же можно будет представить в виде интеграла и затем приравнять подынтегральные выражения}
+\end_layout
+
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\begin{cases}
+\partial_{t}\eta+u_{01}\partial_{x}\eta=\frac{-i}{\rho_{1}}\frac{kA_{1}\left(e^{k\eta}-e^{-k\eta+2kh_{1}}\right)}{\omega-ku_{01}}e^{ikx-i\omega t};\\
+\partial_{t}\eta+u_{02}\partial_{x}\eta=\frac{-i}{\rho_{2}}\frac{kA_{2}\left(e^{k\eta}-e^{-k\eta-2kh_{2}}\right)}{\omega-ku_{02}}e^{ikx-i\omega t}.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В уравнении 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:linearized"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ мы пренебрегли 2-ым порядком по скорости,
+ то есть,
+ предположили,
+ что колебания скорости малы.
+ Это означает,
+ что и сами волны не могут быть высокими:
+ условие 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:kinetic"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ показывает,
+ что 
+\begin_inset Formula $d\eta/dt$
+\end_inset
+
+ мала,
+ т.е.
+ 
+\begin_inset Formula $\eta$
+\end_inset
+
+ не сильно меняется со временем,
+ что говорит о малости амплитуды волн.
+ Это означает,
+ что 
+\begin_inset Formula $h_{1,2}\gg\eta$
+\end_inset
+
+,
+ поэтому мы можем положить в правой части 
+\begin_inset Formula $\eta\approx0$
+\end_inset
+
+.
+ В левой части подставим выражение для бегущей волны 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:monocrome-wave"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\begin{cases}
+\left(-i\omega\hat{\eta}+iku_{01}\hat{\eta}\right)e^{ikx-i\omega t}=\frac{-i}{\rho_{1}}\frac{kA_{1}\left(1-e^{2kh_{1}}\right)}{\omega-ku_{01}}e^{ikx-i\omega t};\\
+\left(-i\omega\hat{\eta}+iku_{02}\hat{\eta}\right)e^{ikx-i\omega t}=\frac{-i}{\rho_{2}}\frac{kA_{2}\left(1-e^{-2kh_{2}}\right)}{\omega-ku_{02}}e^{ikx-i\omega t}.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Отсюда
+\begin_inset Formula 
+\[
+\begin{cases}
+\hat{\eta}=\frac{1}{\rho_{1}}\frac{kA_{1}\left(1-e^{2kh_{1}}\right)}{\left(\omega-ku_{01}\right)^{2}};\\
+\hat{\eta}=\frac{1}{\rho_{2}}\frac{kA_{2}\left(1-e^{-2kh_{2}}\right)}{\left(\omega-ku_{02}\right)^{2}}.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
