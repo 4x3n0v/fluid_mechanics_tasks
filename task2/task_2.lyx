@@ -596,12 +596,12 @@ B_{2}=A_{2}e^{-2kh_{2}}.
 \begin_layout Standard
 Теперь давление содержит меньше неизвестных констант:
 \begin_inset Formula 
-\[
+\begin{equation}
 \begin{cases}
 \hat{p}'_{1}=A_{1}\left(e^{ky}+e^{-ky+2kh_{1}}\right);\\
 \hat{p}'_{2}=A_{2}\left(e^{ky}+e^{-ky-2kh_{2}}\right).
-\end{cases}
-\]
+\end{cases}\label{eq:pressure}
+\end{equation}
 
 \end_inset
 
@@ -634,10 +634,52 @@ nolink "false"
 \end_inset
 
 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+.1-e^{2kh_{1}}
 \end_layout
 
 \begin_layout Standard
 Для воды:
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+.1-e^{2kh_{1}}
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
 \begin_inset Formula 
 \[
 \begin{cases}
@@ -788,9 +830,90 @@ nolink "false"
 \begin_inset Formula 
 \[
 \begin{cases}
-\hat{\eta}=\frac{1}{\rho_{1}}\frac{kA_{1}\left(1-e^{2kh_{1}}\right)}{\left(\omega-ku_{01}\right)^{2}};\\
-\hat{\eta}=\frac{1}{\rho_{2}}\frac{kA_{2}\left(1-e^{-2kh_{2}}\right)}{\left(\omega-ku_{02}\right)^{2}}.
+A_{1}=\frac{\rho_{1}\left(\omega-ku_{01}\right)^{2}}{k\left(1-e^{2kh_{1}}\right)}\hat{\eta};\\
+A_{2}=\frac{\rho_{2}\left(\omega-ku_{02}\right)^{2}}{k\left(1-e^{-2kh_{2}}\right)}\hat{\eta}.
 \end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Надо теперь подставить все в динамическое гран.
+ условие 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:dynamic"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ при 
+\begin_inset Formula $y=\eta$
+\end_inset
+
+.
+ Сразу можно в формуле для давления 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:pressure"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ пренебречь 
+\begin_inset Formula $\eta$
+\end_inset
+
+ по сравнению с 
+\begin_inset Formula $h_{1.2}$
+\end_inset
+
+,
+ как мы это делали раньше:
+\begin_inset Formula 
+\[
+\begin{cases}
+\hat{p}'_{1}=\frac{\rho_{1}\left(\omega-ku_{01}\right)^{2}}{k}\frac{1+e^{2kh_{1}}}{1-e^{2kh_{1}}}\hat{\eta};\\
+\hat{p}'_{2}=\frac{\rho_{2}\left(\omega-ku_{02}\right)^{2}}{k}\frac{1+e^{-2kh_{2}}}{1-e^{-2kh_{2}}}\hat{\eta}.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Отношение экспонент можно собрать в котангенс:
+ 
+\begin_inset Formula $\frac{1+e^{2kh_{1}}}{1-e^{2kh_{1}}}=-\frac{e^{-kh_{1}}+e^{kh_{1}}}{e^{kh_{1}}-e^{-kh_{1}}}=-\coth\left(kh_{1}\right)$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\frac{1+e^{-2kh_{2}}}{1-e^{-2kh_{2}}}=\frac{e^{kh_{2}}+e^{-kh_{2}}}{e^{kh_{2}}-e^{-kh_{2}}}=\coth\left(kh_{2}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Подстановка гран.
+ условия дает:
+\begin_inset Formula 
+\[
+\begin{split}\left[-\frac{\rho_{1}\left(\omega-ku_{01}\right)^{2}}{k}\coth\left(kh_{1}\right)-\frac{\rho_{2}\left(\omega-ku_{02}\right)^{2}}{k}\coth\left(kh_{2}\right)\right]\hat{\eta} & =-k^{2}\sigma\hat{\eta}+g\left(\rho_{2}-\rho_{1}\right)\hat{\eta}\\
+\rho_{1}\coth\left(kh_{1}\right)\left(\omega-ku_{01}\right)^{2}+\rho_{2}\coth\left(kh_{2}\right)\left(\omega-ku_{02}\right)^{2} & =kg\left(\rho_{2}-\rho_{1}\right)-k^{3}\sigma
+\end{split}
 \]
 
 \end_inset
