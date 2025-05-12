@@ -114,7 +114,7 @@
 \begin_body
 
 \begin_layout Section
-Вывод уравнения на завихренность
+Уравнение на возмущения
 \end_layout
 
 \begin_layout Standard
@@ -634,52 +634,10 @@ nolink "false"
 \end_inset
 
 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-.1-e^{2kh_{1}}
 \end_layout
 
 \begin_layout Standard
 Для воды:
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-.1-e^{2kh_{1}}
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-
 \begin_inset Formula 
 \[
 \begin{cases}
@@ -982,7 +940,7 @@ nolink "false"
 \begin{split}\frac{D}{4k^{2}}= & \cancel{\left(\hat{\rho}_{1}u_{01}\right)^{2}}+2\hat{\rho}_{1}\hat{\rho}_{2}u_{01}u_{02}+\cancel{\left(\hat{\rho}_{2}u_{02}\right)^{2}}\\
 - & \left\{ \cancel{\left(\hat{\rho}_{1}u_{01}\right)^{2}}+\cancel{\left(\hat{\rho}_{2}u_{02}\right)^{2}}+\hat{\rho}_{1}\hat{\rho}_{2}\left(u_{01}^{2}+u_{02}^{2}\right)\right\} \\
 - & \left(\hat{\rho}_{1}+\hat{\rho}_{2}\right)\left\{ k\sigma-\frac{g\left(\rho_{2}-\rho_{1}\right)}{k}\right\} \\
-= & \hat{\rho}_{1}\hat{\rho}_{2}\left(u_{01}+u_{02}\right)^{2}-\left(\hat{\rho}_{1}+\hat{\rho}_{2}\right)\left\{ k\sigma-\frac{g\left(\rho_{2}-\rho_{1}\right)}{k}\right\} .
+= & -\hat{\rho}_{1}\hat{\rho}_{2}\left(u_{01}-u_{02}\right)^{2}+\left(\hat{\rho}_{1}+\hat{\rho}_{2}\right)\left\{ -k\sigma+\frac{g\left(\rho_{2}-\rho_{1}\right)}{k}\right\} .
 \end{split}
 \]
 
@@ -991,19 +949,19 @@ nolink "false"
 
 \end_layout
 
-\begin_layout Standard
-Рассмотрим теперь разные случаи.
- Если скобка 
-\begin_inset Formula $\left\{ ...\right\} <0$
-\end_inset
+\begin_layout Section
+Устойчивость по Кельвину-Гельмгольцу
+\end_layout
 
-,
- то это означает,
- что дискриминант всегда положительный и 
+\begin_layout Standard
+Устойчивость КГ = если отклонения появляются,
+ они затухают.
+ Если дискриминант положительный,
+ то 
 \begin_inset Formula $\omega$
 \end_inset
 
- всегда вещественная.
+ вещественная.
  Вещественная 
 \begin_inset Formula $\omega$
 \end_inset
@@ -1036,73 +994,69 @@ sqrt{
 left|D
 \backslash
 right|}$.
- Но неограниченный рост кажется нефизичным решением (может ли возникнуть резонанс в такой системе?),
+ Но неограниченный рост кажется нефизичным решением (может ли возникнуть резонанс в такой системе?
+ Думаю,
+ что закон сохранения энергии в таком случае нарушится,
+ поэтому,
+ нет),
  поэтому при взятии корня из дискриминанта,
  мы должны выбрать ветвь $-i$,
  поскольку мы рассматривали волны $
 \backslash
 propto e^{ikx-i
 \backslash
-omega t}$.
- В любом случае,
- какое бы ни было решение,
- оно не соответствует устойчивым колебаниям.}
+omega t}$.}
 \end_layout
 
 \end_inset
 
 ,
  т.е.
- будут устойчивые волны.
- То есть,
+ система неустойчива.
+ Если 
+\begin_inset Formula $\left\{ ...\right\} <0$
+\end_inset
+
+,
+ то дискриминант отрицательный и колебания затухают (система устойчива):
 \begin_inset Formula 
 \[
-\begin{split} & k\sigma-\frac{g\left(\rho_{2}-\rho_{1}\right)}{k}<0\\
- & k^{2}<\frac{g\left(\rho_{2}-\rho_{1}\right)}{\sigma}.
+\begin{split} & -k\sigma+\frac{g\left(\rho_{2}-\rho_{1}\right)}{k}<0\\
+ & k^{2}>\frac{g\left(\rho_{2}-\rho_{1}\right)}{\sigma}.
 \end{split}
 \]
 
 \end_inset
 
-что соответствует гравитационным волнам.
+что соответствует капиллярным волнам.
+ То есть,
+ капиллярные волны не выводят систему из устойчивого состояния.
+ Оценим пограничное волновое число:
+\begin_inset Formula 
+\[
+k\sim\left(\frac{10\times10^{3}}{0.075}\right)^{1/2}\sim365\text{м}^{-1}.
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Случай 
-\begin_inset Formula $k^{2}>\frac{g\left(\rho_{2}-\rho_{1}\right)}{\sigma}$
+\begin_inset Formula $k^{2}<\frac{g\left(\rho_{2}-\rho_{1}\right)}{\sigma}$
 \end_inset
 
- соответствует капиллярным волнам.
- При этом,
- будут ли устойчивыми колебания,
- зависит от знака дискриминанта:
- 
+ соответствует гравитационным волнам.
+ Неустойчивость будет при 
 \begin_inset Formula $D>0$
 \end_inset
 
- – устойчивые,
- 
-\begin_inset Formula $D<0$
-\end_inset
-
- – неустойчивые (появится 
-\begin_inset Formula $\pm i$
-\end_inset
-
- при комплексном взятии корня,
- которая даст не-комплексную экспоненту).
- Таким образом,
- должны найтись устойчивые волны с волновыми числами 
-\begin_inset Formula $k$
-\end_inset
-
-,
- которые удовлетворяют соотношению:
- 
+:
 \begin_inset Formula 
-\[
-\left[k\sigma-\frac{g\left(\rho_{2}-\rho_{1}\right)}{k}\right]\frac{1}{\hat{\rho}}>\left(u_{01}+u_{02}\right)^{2},
-\]
+\begin{equation}
+\left[-k\sigma+\frac{g\left(\rho_{2}-\rho_{1}\right)}{k}\right]\frac{1}{\hat{\rho}}>\left(u_{01}-u_{02}\right)^{2},\label{eq:instability_discr}
+\end{equation}
 
 \end_inset
 
@@ -1115,16 +1069,16 @@ omega t}$.
 
 \begin_layout Standard
 Нам интересны 
-\begin_inset Formula $k\in\left(\frac{g\left(\rho_{2}-\rho_{1}\right)}{\sigma},\infty\right)$
+\begin_inset Formula $k\in\left(0,\frac{g\left(\rho_{2}-\rho_{1}\right)}{\sigma}\right)$
 \end_inset
 
 .
- При достаточно близких к левой границе 
-\begin_inset Formula $k$
+ При достаточно близких к правой границе 
+\begin_inset Formula $k\rightarrow\frac{g\left(\rho_{2}-\rho_{1}\right)}{\sigma}$
 \end_inset
 
  выражение 
-\begin_inset Formula $k\sigma-\frac{g\left(\rho_{2}-\rho_{1}\right)}{k}$
+\begin_inset Formula $-k\sigma+\frac{g\left(\rho_{2}-\rho_{1}\right)}{k}$
 \end_inset
 
  будет достаточно малым,
@@ -1133,8 +1087,8 @@ omega t}$.
 \end_inset
 
  будет приближаться к какому-то конечному значению и неравенство не будет выполнено.
- При достаточно больших 
-\begin_inset Formula $k$
+ При 
+\begin_inset Formula $k\rightarrow0$
 \end_inset
 
  
@@ -1151,7 +1105,11 @@ omega t}$.
 \uwave off
 \noun off
 \color none
-котангенс стремится к 1,
+котангенс ведет себя как 
+\begin_inset Formula $1/k$
+\end_inset
+
+,
  поэтому
 \family default
 \series default
@@ -1167,24 +1125,27 @@ omega t}$.
 \noun default
 \color inherit
  
-\begin_inset Formula $\hat{\rho}\rightarrow\frac{\rho_{1}\rho_{2}}{\left(\rho_{1}+\rho_{2}\right)}=\rho$
+\begin_inset Formula $\hat{\rho}\sim\frac{1/k^{2}}{1/k}\sim1/k$
 \end_inset
 
 ,
  поэтому левая часть выражения ведет себя как 
-\begin_inset Formula $\sim\frac{\sigma}{\rho}k$
+\begin_inset Formula $\sim\frac{\sigma}{\rho}\frac{1}{k^{2}}$
 \end_inset
 
 ,
  то есть,
- растет неограниченно и может превысить правую.
+ растет неограниченно и может превысить 
+\begin_inset Formula $\left(u_{01}-u_{02}\right)^{2}$
+\end_inset
+
+.
  Значит,
- для любых скоростей будут устойчивыми капиллярные волны с достаточно короткой длиной волны (большим волновым числом 
+ система неустойчива для достаточно длинных волн (с маленьким волновым числом 
 \begin_inset Formula $k$
 \end_inset
 
 ).
- Качественно это означает наличие длинных гравитационных волн и мелкой капиллярной ряби.
 \end_layout
 
 \begin_layout Paragraph
@@ -1199,14 +1160,25 @@ omega t}$.
 \end_inset
 
 .
- Перенесем все в левую часть и домножим на 
+ Перенесем все в правую часть 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:instability_discr"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ и домножим на 
 \begin_inset Formula $k$
 \end_inset
 
 :
 \begin_inset Formula 
 \begin{equation}
-\sigma k^{2}-\hat{\rho}\left(u_{01}+u_{02}\right)^{2}k-g\left(\rho_{2}-\rho_{1}\right)>0.\label{eq:stability}
+\sigma k^{2}+\hat{\rho}\left(u_{01}-u_{02}\right)^{2}k-g\left(\rho_{2}-\rho_{1}\right)<0.\label{eq:stability}
 \end{equation}
 
 \end_inset
@@ -1231,14 +1203,14 @@ omega t}$.
 \end_inset
 
 .
- Здесь уже можно приблизительно написать пограничный случай 
+ Здесь уже можно написать пограничный случай 
 \begin_inset Formula $D=0$
 \end_inset
 
  как уравнение параболы:
 \begin_inset Formula 
 \[
-\sigma k^{2}-\rho\left(u_{01}+u_{02}\right)^{2}k-g\left(\rho_{2}-\rho_{1}\right)=0,
+\sigma k^{2}+\rho\left(u_{01}-u_{02}\right)^{2}k-g\left(\rho_{2}-\rho_{1}\right)=0,
 \]
 
 \end_inset
@@ -1246,7 +1218,7 @@ omega t}$.
 решение которого
 \begin_inset Formula 
 \[
-k_{\pm}=\frac{\rho\left(u_{01}+u_{02}\right)^{2}}{2\sigma}\pm\frac{\sqrt{\rho^{2}\left(u_{01}+u_{02}\right)^{4}+4\sigma g\left(\rho_{2}-\rho_{1}\right)}}{2\sigma}.
+k_{\pm}=-\frac{\rho\left(u_{01}-u_{02}\right)^{2}}{2\sigma}\pm\frac{\sqrt{\rho^{2}\left(u_{01}-u_{02}\right)^{4}+4\sigma g\left(\rho_{2}-\rho_{1}\right)}}{2\sigma}.
 \]
 
 \end_inset
@@ -1268,11 +1240,7 @@ nolink "false"
 \end_inset
 
  будет выполняться для 
-\begin_inset Formula $k<k_{-}$
-\end_inset
-
- и 
-\begin_inset Formula $k>k_{+}$
+\begin_inset Formula $k_{-}<k<k_{+}$
 \end_inset
 
 .
@@ -1282,7 +1250,7 @@ nolink "false"
 
 ,
  поэтому он нас не интересует,
- поэтому мы нашли для такого случая нижнюю границу для капиллярных волн 
+ поэтому мы нашли для такого случая верхнюю границу для волнового числа для гравитационных волн 
 \begin_inset Formula $k=k_{+}$
 \end_inset
 
