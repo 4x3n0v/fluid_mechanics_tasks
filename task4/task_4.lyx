@@ -183,7 +183,7 @@ p_{0} & =p_{0}\left(z\right).
 \end_inset
 
  и 
-\begin_inset Formula $\vec{u}'$
+\begin_inset Formula $\nabla\vec{u}'=0$
 \end_inset
 
 .
@@ -200,17 +200,18 @@ p_{0} & =p_{0}\left(z\right).
 \end_layout
 
 \begin_layout Standard
-В фурье-представлении по 
+В одиночной волне/фурье-представлении по 
 \begin_inset Formula $\left(z,\theta,t\right)$
 \end_inset
 
 :
 \begin_inset Formula 
-\[
+\begin{equation}
 \begin{split}\vec{u}' & =\vec{\hat{u}}\left(r\right)e^{i\left(\alpha z+m\theta-\omega t\right)};\\
 p' & =\hat{p}\left(r\right)e^{i\left(\alpha z+m\theta-\omega t\right)}.
 \end{split}
-\]
+\label{eq:fourier}
+\end{equation}
 
 \end_inset
 
@@ -229,7 +230,7 @@ nolink "false"
 
 \end_inset
 
- в циллиндрической системе координат 
+ в цилиндрической системе координат 
 \begin_inset Formula $\left(r,\theta,z\right)$
 \end_inset
 
@@ -244,21 +245,133 @@ nolink "false"
 
 \end_inset
 
+ (везде вылезут одинаковые экспоненты,
+ поэтому их можно сразу сократить):
+\begin_inset Formula 
+\begin{equation}
+\begin{split}-i\omega\hat{u}_{r}+i\alpha u_{0}\hat{u}_{r} & =-\frac{1}{\rho}\frac{d\hat{p}}{dr}+\nu\Delta\hat{u}_{r}\\
+-i\omega\hat{u}_{\theta}+i\alpha u_{0}\hat{u}_{\theta} & =-\frac{1}{\rho}\frac{im}{r}\hat{p}+\nu\Delta\hat{u}_{\theta}\\
+-i\omega\hat{u}_{z}+\hat{u}_{r}\frac{du_{0}}{dr} & +i\alpha\hat{u}_{z}u_{0}=-\frac{1}{\rho}i\alpha\hat{p}+\nu\Delta\hat{u}_{z},
+\end{split}
+\label{eq:cylindric_equations}
+\end{equation}
+
+\end_inset
+
+где оператор Лапласа в цск + с учетом подстановки 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:fourier"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+\Delta=\left(\frac{1}{r}\frac{d}{dr}\left(r\frac{d}{dr}\right)-\frac{m^{2}}{r^{2}}-\alpha^{2}\right),\label{eq:laplas}
+\end{equation}
+
+\end_inset
+
+а градиент имеет выражается как 
+\begin_inset Formula $\nabla=\left(\partial_{r},\frac{1}{r}\partial_{\theta},\partial_{z}\right)=\left(\partial_{r},\frac{im}{r},i\alpha\right)$
+\end_inset
+
+ (второе равенство для функций типа 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:fourier"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Из 3-го уравнения 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:cylindric_equations"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ выразим амплитуду 
+\begin_inset Formula $\hat{p}$
+\end_inset
+
 :
 \begin_inset Formula 
 \[
-\begin{split}-i\omega\hat{u}_{r}+i\alpha u_{0}\hat{u}_{r} & =-\frac{1}{\rho}\frac{d}{dr}\hat{p}+\nu\Delta\hat{u}_{r}\\
--i\omega\hat{u}_{\theta}+i\alpha u_{0}\hat{u}_{\theta} & =-\frac{1}{\rho}\frac{im}{r}\hat{p}+\nu\Delta\hat{u}_{\theta}\\
--i\omega\hat{u}_{\theta}+i\alpha u_{0}\hat{u}_{z}\frac{d}{dr}u_{0}+\hat{u}_{r} & =-\frac{1}{\rho}i\alpha\hat{p}+\nu\Delta\hat{u}_{z},
-\end{split}
+\hat{p}=-\frac{\rho}{i\alpha}\left[\left(-i\omega+i\alpha u_{0}\right)\hat{u}_{z}+\hat{u}_{r}\frac{du_{0}}{dr}-\nu\Delta\hat{u}_{z}\right].
 \]
 
 \end_inset
 
-где оператор Лапласа в цск + с учетом подстановки функции после фурье / одиночной волны:
+
+\end_layout
+
+\begin_layout Standard
+Подставим давление в 1-ое уравнение в 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:cylindric_equations"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+\left(-i\omega+i\alpha u_{0}\right)\hat{u}_{r}=\frac{1}{i\alpha}\frac{d}{dr}\left[\left(-i\omega+i\alpha u_{0}\right)\hat{u}_{z}-\nu\Delta\hat{u}_{z}+\hat{u}_{r}\frac{du_{0}}{dr}\right]+\nu\Delta\hat{u}_{r}\label{eq:u_r_and_u_z}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Получилось уравнение с 
+\begin_inset Formula $\hat{u}_{r}$
+\end_inset
+
+ и 
+\begin_inset Formula $\hat{u}_{z}$
+\end_inset
+
+,
+ хотим избавиться от чего-нибудь.
+ Привлечем уравнение неразрывности для возмущения 
+\begin_inset Formula $\nabla\vec{u}'=0$
+\end_inset
+
+:
 \begin_inset Formula 
 \[
-\Delta=\left(\frac{1}{r}\frac{d}{dr}\left(r\frac{d}{dr}\right)-\frac{m^{2}}{r^{2}}-\alpha^{2}\right).
+\frac{1}{r}\frac{d\left(r\hat{u}_{r}\right)}{dr}+\frac{im}{r}\hat{u}_{\theta}+i\alpha\hat{u}_{z}=0,
+\]
+
+\end_inset
+
+откуда
+\begin_inset Formula 
+\[
+\hat{u}_{z}=-\frac{1}{i\alpha}\left[\frac{1}{r}\frac{d\left(r\hat{u}_{r}\right)}{dr}+\frac{im}{r}\hat{u}_{\theta}\right].
 \]
 
 \end_inset
