@@ -226,7 +226,7 @@
  условие:
 \begin_inset Formula 
 \begin{equation}
-p'_{1}-p'_{2}=\sigma\partial_{x}^{2}\eta+g\left(\rho_{2}-\rho_{1}\right)\eta=0,\label{eq:dynamic}
+p'_{1}-p'_{2}=\sigma\partial_{x}^{2}\eta-g\left(\rho_{2}-\rho_{1}\right)\eta=0,\label{eq:dynamic}
 \end{equation}
 
 \end_inset
@@ -251,7 +251,7 @@ p'_{1}-p'_{2}=\sigma\partial_{x}^{2}\eta+g\left(\rho_{2}-\rho_{1}\right)\eta=0,\
  действующей со стороны воды:
 \begin_inset Formula 
 \[
-p'_{1}+g\rho_{1}\eta=p'_{2}+\sigma\partial_{x}^{2}\eta+g\rho_{2}\eta.
+p'_{1}-g\rho_{1}\eta=p'_{2}+\sigma\partial_{x}^{2}\eta-g\rho_{2}\eta.
 \]
 
 \end_inset
@@ -869,9 +869,9 @@ nolink "false"
  условия дает:
 \begin_inset Formula 
 \[
-\begin{split}\left[-\frac{\rho_{1}\left(\omega-ku_{01}\right)^{2}}{k}\coth\left(kh_{1}\right)-\frac{\rho_{2}\left(\omega-ku_{02}\right)^{2}}{k}\coth\left(kh_{2}\right)\right]\hat{\eta} & =-k^{2}\sigma\hat{\eta}+g\left(\rho_{2}-\rho_{1}\right)\hat{\eta}\\
-\rho_{1}\coth\left(kh_{1}\right)\left(\omega-ku_{01}\right)^{2}+\rho_{2}\coth\left(kh_{2}\right)\left(\omega-ku_{02}\right)^{2} & =kg\left(\rho_{2}-\rho_{1}\right)-k^{3}\sigma\\
-\hat{\rho}_{1}\left(\omega-ku_{01}\right)^{2}+\hat{\rho}_{2}\left(\omega-ku_{02}\right)^{2} & =kg\left(\rho_{2}-\rho_{1}\right)-k^{3}\sigma,
+\begin{split}\left[-\frac{\rho_{1}\left(\omega-ku_{01}\right)^{2}}{k}\coth\left(kh_{1}\right)-\frac{\rho_{2}\left(\omega-ku_{02}\right)^{2}}{k}\coth\left(kh_{2}\right)\right]\hat{\eta} & =-k^{2}\sigma\hat{\eta}-g\left(\rho_{2}-\rho_{1}\right)\hat{\eta}\\
+\rho_{1}\coth\left(kh_{1}\right)\left(\omega-ku_{01}\right)^{2}+\rho_{2}\coth\left(kh_{2}\right)\left(\omega-ku_{02}\right)^{2} & =kg\left(\rho_{2}-\rho_{1}\right)+k^{3}\sigma\\
+\hat{\rho}_{1}\left(\omega-ku_{01}\right)^{2}+\hat{\rho}_{2}\left(\omega-ku_{02}\right)^{2} & =kg\left(\rho_{2}-\rho_{1}\right)+k^{3}\sigma,
 \end{split}
 \]
 
@@ -890,7 +890,7 @@ nolink "false"
 \[
 \begin{split}0= & \left(\hat{\rho}_{1}+\hat{\rho}_{2}\right)\omega^{2}\\
  & -2k\left[\hat{\rho}_{1}u_{01}+\hat{\rho}_{2}u_{02}\right]\omega\\
- & +k^{2}\left[\hat{\rho}_{1}u_{01}^{2}+\hat{\rho}_{2}u_{02}^{2}\right]+k^{3}\sigma-kg\left(\rho_{2}-\rho_{1}\right).
+ & +k^{2}\left[\hat{\rho}_{1}u_{01}^{2}+\hat{\rho}_{2}u_{02}^{2}\right]-k^{3}\sigma-kg\left(\rho_{2}-\rho_{1}\right).
 \end{split}
 \]
 
@@ -910,7 +910,7 @@ nolink "false"
 \[
 \begin{split}D= & 4k^{2}\left(\hat{\rho}_{1}u_{01}+\hat{\rho}_{2}u_{02}\right)^{2}\\
 - & 4\left(\hat{\rho}_{1}+\hat{\rho}_{2}\right)\\
- & \times\left\{ k^{2}\left[\hat{\rho}_{1}u_{01}^{2}+\hat{\rho}_{2}u_{02}^{2}\right]+k^{3}\sigma-kg\left(\rho_{2}-\rho_{1}\right)\right\} .
+ & \times\left\{ k^{2}\left[\hat{\rho}_{1}u_{01}^{2}+\hat{\rho}_{2}u_{02}^{2}\right]-k^{3}\sigma-kg\left(\rho_{2}-\rho_{1}\right)\right\} .
 \end{split}
 \]
 
@@ -939,8 +939,8 @@ nolink "false"
 \[
 \begin{split}\frac{D}{4k^{2}}= & \cancel{\left(\hat{\rho}_{1}u_{01}\right)^{2}}+2\hat{\rho}_{1}\hat{\rho}_{2}u_{01}u_{02}+\cancel{\left(\hat{\rho}_{2}u_{02}\right)^{2}}\\
 - & \left\{ \cancel{\left(\hat{\rho}_{1}u_{01}\right)^{2}}+\cancel{\left(\hat{\rho}_{2}u_{02}\right)^{2}}+\hat{\rho}_{1}\hat{\rho}_{2}\left(u_{01}^{2}+u_{02}^{2}\right)\right\} \\
-- & \left(\hat{\rho}_{1}+\hat{\rho}_{2}\right)\left\{ k\sigma-\frac{g\left(\rho_{2}-\rho_{1}\right)}{k}\right\} \\
-= & -\hat{\rho}_{1}\hat{\rho}_{2}\left(u_{01}-u_{02}\right)^{2}+\left(\hat{\rho}_{1}+\hat{\rho}_{2}\right)\left\{ -k\sigma+\frac{g\left(\rho_{2}-\rho_{1}\right)}{k}\right\} .
+- & \left(\hat{\rho}_{1}+\hat{\rho}_{2}\right)\left\{ -k\sigma-\frac{g\left(\rho_{2}-\rho_{1}\right)}{k}\right\} \\
+= & -\hat{\rho}_{1}\hat{\rho}_{2}\left(u_{01}-u_{02}\right)^{2}+\left(\hat{\rho}_{1}+\hat{\rho}_{2}\right)\left\{ k\sigma+\frac{g\left(\rho_{2}-\rho_{1}\right)}{k}\right\} .
 \end{split}
 \]
 
@@ -1013,212 +1013,18 @@ omega t}$.}
 ,
  т.е.
  система неустойчива.
- Если 
-\begin_inset Formula $\left\{ ...\right\} <0$
-\end_inset
-
-,
- то дискриминант отрицательный и колебания затухают (система устойчива):
-\begin_inset Formula 
-\[
-\begin{split} & -k\sigma+\frac{g\left(\rho_{2}-\rho_{1}\right)}{k}<0\\
- & k^{2}>\frac{g\left(\rho_{2}-\rho_{1}\right)}{\sigma}.
-\end{split}
-\]
-
-\end_inset
-
-что соответствует капиллярным волнам.
- То есть,
- капиллярные волны не выводят систему из устойчивого состояния.
- Оценим пограничное волновое число:
-\begin_inset Formula 
-\[
-k\sim\left(\frac{10\times10^{3}}{0.075}\right)^{1/2}\sim365\text{м}^{-1}.
-\]
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
-Случай 
-\begin_inset Formula $k^{2}<\frac{g\left(\rho_{2}-\rho_{1}\right)}{\sigma}$
-\end_inset
-
- соответствует гравитационным волнам.
- Неустойчивость будет при 
+Если 
 \begin_inset Formula $D>0$
 \end_inset
 
-:
-\begin_inset Formula 
-\begin{equation}
-\left[-k\sigma+\frac{g\left(\rho_{2}-\rho_{1}\right)}{k}\right]\frac{1}{\hat{\rho}}>\left(u_{01}-u_{02}\right)^{2},\label{eq:instability_discr}
-\end{equation}
-
-\end_inset
-
-где введено обозначение 
-\begin_inset Formula $\hat{\rho}=\frac{\hat{\rho}_{1}\hat{\rho}_{2}}{\left(\hat{\rho}_{1}+\hat{\rho}_{2}\right)}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Нам интересны 
-\begin_inset Formula $k\in\left(0,\frac{g\left(\rho_{2}-\rho_{1}\right)}{\sigma}\right)$
-\end_inset
-
-.
- При достаточно близких к правой границе 
-\begin_inset Formula $k\rightarrow\frac{g\left(\rho_{2}-\rho_{1}\right)}{\sigma}$
-\end_inset
-
- выражение 
-\begin_inset Formula $-k\sigma+\frac{g\left(\rho_{2}-\rho_{1}\right)}{k}$
-\end_inset
-
- будет достаточно малым,
- а 
-\begin_inset Formula $\frac{1}{\hat{\rho}}$
-\end_inset
-
- будет приближаться к какому-то конечному значению и неравенство не будет выполнено.
- При 
-\begin_inset Formula $k\rightarrow0$
-\end_inset
-
- 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-котангенс ведет себя как 
-\begin_inset Formula $1/k$
-\end_inset
-
 ,
- поэтому
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
- 
-\begin_inset Formula $\hat{\rho}\sim\frac{1/k^{2}}{1/k}\sim1/k$
-\end_inset
-
-,
- поэтому левая часть выражения ведет себя как 
-\begin_inset Formula $\sim\frac{\sigma}{\rho}\frac{1}{k^{2}}$
-\end_inset
-
-,
- то есть,
- растет неограниченно и может превысить 
-\begin_inset Formula $\left(u_{01}-u_{02}\right)^{2}$
-\end_inset
-
-.
- Значит,
- система неустойчива для достаточно длинных волн (с маленьким волновым числом 
-\begin_inset Formula $k$
-\end_inset
-
-).
-\end_layout
-
-\begin_layout Paragraph
-Дополнение
-\end_layout
-
-\begin_layout Standard
-Не знаю,
- есть ли смысл это рассматривать,
- но можно посчитать для больших 
-\begin_inset Formula $h_{i}$
-\end_inset
-
-.
- Перенесем все в правую часть 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "eq:instability_discr"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- и домножим на 
-\begin_inset Formula $k$
-\end_inset
-
-:
-\begin_inset Formula 
-\begin{equation}
-\sigma k^{2}+\hat{\rho}\left(u_{01}-u_{02}\right)^{2}k-g\left(\rho_{2}-\rho_{1}\right)<0.\label{eq:stability}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Мы получили почти параболу,
- все портят только 
-\begin_inset Formula $\hat{\rho}_{i}=\rho_{i}\coth\left(kh_{i}\right)$
-\end_inset
-
-.
- При достаточно больших 
-\begin_inset Formula $h_{i}$
-\end_inset
-
- котангенс стремится к 1,
- поэтому 
-\begin_inset Formula $\hat{\rho}\rightarrow\frac{\rho_{1}\rho_{2}}{\left(\rho_{1}+\rho_{2}\right)}=\rho$
-\end_inset
-
-.
- Здесь уже можно написать пограничный случай 
-\begin_inset Formula $D=0$
-\end_inset
-
- как уравнение параболы:
+ система неустойчива:
 \begin_inset Formula 
 \[
-\sigma k^{2}+\rho\left(u_{01}-u_{02}\right)^{2}k-g\left(\rho_{2}-\rho_{1}\right)=0,
-\]
-
-\end_inset
-
-решение которого
-\begin_inset Formula 
-\[
-k_{\pm}=-\frac{\rho\left(u_{01}-u_{02}\right)^{2}}{2\sigma}\pm\frac{\sqrt{\rho^{2}\left(u_{01}-u_{02}\right)^{4}+4\sigma g\left(\rho_{2}-\rho_{1}\right)}}{2\sigma}.
+-\hat{\rho}_{1}\hat{\rho}_{2}\left(u_{01}-u_{02}\right)^{2}+\left(\hat{\rho}_{1}+\hat{\rho}_{2}\right)\left\{ k\sigma+\frac{g\left(\rho_{2}-\rho_{1}\right)}{k}\right\} >0.
 \]
 
 \end_inset
@@ -1227,34 +1033,54 @@ k_{\pm}=-\frac{\rho\left(u_{01}-u_{02}\right)^{2}}{2\sigma}\pm\frac{\sqrt{\rho^{
 \end_layout
 
 \begin_layout Standard
-У этой параболы ветви вверх,
- поэтому неравенство 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "eq:stability"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
+Или
+\begin_inset Formula 
+\[
+\frac{\hat{\rho}_{1}+\hat{\rho}_{2}}{\hat{\rho}_{1}\hat{\rho}_{2}}\left\{ k\sigma+\frac{g\left(\rho_{2}-\rho_{1}\right)}{k}\right\} >\left(u_{01}-u_{02}\right)^{2}.
+\]
 
 \end_inset
 
- будет выполняться для 
-\begin_inset Formula $k_{-}<k<k_{+}$
+
+\end_layout
+
+\begin_layout Standard
+В случаях,
+ когда границы далеко по сравнению с возмущениями (а так и есть 
+\begin_inset Formula $h_{1,2}\gg\eta$
+\end_inset
+
+),
+ можно пренебречь зависимостью 
+\begin_inset Formula $\frac{\hat{\rho}_{1}+\hat{\rho}_{2}}{\hat{\rho}_{1}\hat{\rho}_{2}}$
+\end_inset
+
+ от 
+\begin_inset Formula $k$
 \end_inset
 
 .
- 
-\begin_inset Formula $k_{-}<0$
+ Тогда рассмотрим функцию в фигурных скобках и найдем ее минимум:
+\begin_inset Formula 
+\[
+\sigma-\frac{g\left(\rho_{2}-\rho_{1}\right)}{k_{min}^{2}}=0.
+\]
+
 \end_inset
 
-,
- поэтому он нас не интересует,
- поэтому мы нашли для такого случая верхнюю границу для волнового числа для гравитационных волн 
-\begin_inset Formula $k=k_{+}$
+
+\end_layout
+
+\begin_layout Standard
+Отсюда
+\begin_inset Formula 
+\[
+k_{min}=\sqrt{\frac{g\left(\rho_{2}-\rho_{1}\right)}{\sigma}}
+\]
+
 \end_inset
 
-.
+
 \end_layout
 
 \end_body
