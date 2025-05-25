@@ -1,0 +1,1109 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extarticle
+\begin_preamble
+%\usepackage{tempora}
+\usepackage[tableposition=top,font=small,justification=centering]{caption}
+\usepackage{indentfirst}
+\pagestyle{plain}
+\usepackage{fontspec} 
+\defaultfontfeatures{Ligatures={TeX},Renderer=Basic} 
+\setmainfont[Ligatures={TeX,Historic}]{Times New Roman}[NFSSFamily=ntxtlf]
+
+\usepackage{ccaption}
+\captiondelim{. }
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children no
+\language russian
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format pdf5
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize 14
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style russian
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Исходное уравнение:
+\begin_inset Formula 
+\begin{equation}
+\begin{cases}
+\frac{dA_{1}}{dt}=\gamma_{1}A_{1}-\left(\delta_{1}A_{1}^{2}+\beta_{1}A_{2}^{2}\right)A_{1};\\
+\frac{dA_{2}}{dt}=\gamma_{2}A_{2}-\left(\beta_{2}A_{1}^{2}+\delta_{2}A_{2}^{2}\right)A_{2}.
+\end{cases}\label{eq:initial_system}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Стационарное решение это 
+\begin_inset Formula $\frac{dA_{1,2}}{dt}=0$
+\end_inset
+
+.
+ Первым тривиальным решением будет 
+\begin_inset Formula $A_{1}=A_{2}=0$
+\end_inset
+
+.
+ Если 
+\begin_inset Formula $A_{1}$
+\end_inset
+
+ и 
+\begin_inset Formula $A_{2}$
+\end_inset
+
+ не равны нулю одновременно,
+ то остаются случаи 
+\begin_inset Formula $A_{1}=0$
+\end_inset
+
+,
+ 
+\begin_inset Formula $A_{2}=0$
+\end_inset
+
+,
+ 
+\begin_inset Formula $A_{1,2}\ne0$
+\end_inset
+
+.
+ Эти случаи нужно рассмотреть по отдельности для того,
+ чтобы мы могли спокойно сократить на общие множители 
+\begin_inset Formula $A_{1,2}$
+\end_inset
+
+ в каждом уравнении.
+\end_layout
+
+\begin_layout Section
+Аналитическое решение
+\end_layout
+
+\begin_layout Standard
+Если 
+\begin_inset Formula $A_{1}=0$
+\end_inset
+
+,
+ то 
+\begin_inset Formula $A_{2}$
+\end_inset
+
+ находится из второго уравнения:
+\begin_inset Formula 
+\begin{equation}
+\gamma_{2}-\delta_{2}A_{2}^{2}=0.\label{eq:0_A2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если 
+\begin_inset Formula $A_{2}=0$
+\end_inset
+
+,
+ то 
+\begin_inset Formula $A_{1}$
+\end_inset
+
+ находится из первого уравнения:
+\begin_inset Formula 
+\begin{equation}
+\gamma_{1}-\delta_{1}A_{1}^{2}=0.\label{eq:A1_0}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В случае 
+\begin_inset Formula $A_{1,2}\ne0$
+\end_inset
+
+ система упрощается так:
+\begin_inset Formula 
+\[
+\begin{cases}
+0=\gamma_{1}-\left(\delta_{1}A_{1}^{2}+\beta_{1}A_{2}^{2}\right);\\
+0=\gamma_{2}-\left(\beta_{2}A_{1}^{2}+\delta_{2}A_{2}^{2}\right).
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Это линейное уравнение относительно 
+\begin_inset Formula $A_{1,2}^{2}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\left(\begin{array}{cc}
+\delta_{1} & \beta_{1}\\
+\beta_{2} & \delta_{2}
+\end{array}\right)\left(\begin{array}{c}
+A_{1}^{2}\\
+A_{2}^{2}
+\end{array}\right)=\left(\begin{array}{c}
+\gamma_{1}\\
+\gamma_{2}
+\end{array}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Решается через обратную матрицу:
+\begin_inset Formula 
+\[
+\left(\begin{array}{c}
+A_{1}^{2}\\
+A_{2}^{2}
+\end{array}\right)=\frac{1}{\delta_{1}\delta_{2}-\beta_{1}\beta_{2}}\left(\begin{array}{cc}
+\delta_{2} & -\beta_{1}\\
+-\beta_{2} & \delta_{1}
+\end{array}\right)\left(\begin{array}{c}
+\gamma_{1}\\
+\gamma_{2}
+\end{array}\right);
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\left(\begin{array}{c}
+A_{1}^{2}\\
+A_{2}^{2}
+\end{array}\right)=\frac{1}{\delta_{1}\delta_{2}-\beta_{1}\beta_{2}}\left(\begin{array}{c}
+\delta_{2}\gamma_{1}-\beta_{1}\gamma_{2}\\
+-\beta_{2}\gamma_{1}+\delta_{1}\gamma_{2}
+\end{array}\right).\label{eq:A1_A2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Отсюда видно,
+ что система не имеет никаких решений при 
+\begin_inset Formula $\delta_{1}\delta_{2}-\beta_{1}\beta_{2}=0$
+\end_inset
+
+ (фактически это означает что мы написали в системе 2 одинаковых уравнения).
+\end_layout
+
+\begin_layout Section
+Графический анализ решений
+\end_layout
+
+\begin_layout Standard
+Рассмотрим систему стационарных уравнений для 
+\begin_inset Formula $A_{1,2}\ne0$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\begin{cases}
+1=\frac{A_{1}^{2}}{\gamma_{1}/\delta_{1}}+\frac{A_{2}^{2}}{\gamma_{1}/\beta_{1}};\\
+1=\frac{A_{1}^{2}}{\gamma_{2}/\beta_{2}}+\frac{A_{2}^{2}}{\gamma_{2}/\delta_{2}}.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если 
+\begin_inset Formula $\gamma_{1}/\delta_{1}>0$
+\end_inset
+
+ и 
+\begin_inset Formula $\gamma_{1}/\beta_{1}>0$
+\end_inset
+
+,
+ это эллипс.
+ Если кто-то из них отрицательный,
+ а кто-то положительный,
+ это гипербола.
+ Если оба отрицательные,
+ то решений нет.
+\end_layout
+
+\begin_layout Standard
+Подставим 
+\begin_inset Formula $\gamma_{1,2}=2a_{1,2}\left(Re-Re_{1,2}\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+\begin{cases}
+Re-Re_{1}=\frac{A_{1}^{2}}{2a_{1}/\delta_{1}}+\frac{A_{2}^{2}}{2a_{1}/\beta_{1}};\\
+Re-Re_{2}=\frac{A_{1}^{2}}{2a_{2}/\beta_{2}}+\frac{A_{2}^{2}}{2a_{2}/\delta_{2}}.
+\end{cases}\label{eq:A1-A2-system}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Если рассматривать независимые переменные 
+\begin_inset Formula $Re$
+\end_inset
+
+,
+ 
+\begin_inset Formula $A_{1}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $A_{2}$
+\end_inset
+
+,
+ то у нас имеется 2 уравнения для поверхностей,
+ которые пересекаются по какой-то линии.
+ Сечение плоскостью,
+ параллельной плоскости 
+\begin_inset Formula $\left(A_{1},A_{2}\right)$
+\end_inset
+
+,
+ представляет из себя эллипсы.
+ Поперечное сечение,
+ например,
+ 
+\begin_inset Formula $A_{2}=const$
+\end_inset
+
+,
+ это парабола 
+\begin_inset Formula $Re\sim A_{1}^{2}$
+\end_inset
+
+.
+ Поверхности имеют минимальную точку (
+\begin_inset Quotes rld
+\end_inset
+
+вершину
+\begin_inset Quotes rrd
+\end_inset
+
+),
+ координаты которой есть 
+\begin_inset Formula $\left(Re,A_{1},A_{2}\right)=\left(Re_{1,2},0,0\right)$
+\end_inset
+
+,
+ потому что при 
+\begin_inset Formula $\delta_{i}>0$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\beta_{i}>0$
+\end_inset
+
+ правая часть всегда положительна.
+ Получается,
+ что эти поверхности являются параболоидами (но не вращения,
+ потому что поперечное сечение не круг,
+ а эллипс).
+\end_layout
+
+\begin_layout Paragraph
+Уравнение эллипса
+\end_layout
+
+\begin_layout Standard
+Уравнение эллипса выглядит так:
+\begin_inset Formula 
+\[
+\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Тогда для первого эллипса:
+\begin_inset Formula 
+\begin{equation}
+a^{2}=2\frac{a_{1}}{\delta_{1}}\left(Re-Re_{1}\right),\quad b^{2}=\frac{2a_{1}}{\beta_{1}}\left(Re-Re_{1}\right).\label{eq:axes_ellipse_1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Для второго:
+\begin_inset Formula 
+\begin{equation}
+a^{2}=2\frac{a_{2}}{\beta_{2}}\left(Re-Re_{2}\right),\quad b^{2}=\frac{2a_{2}}{\delta_{2}}\left(Re-Re_{2}\right).\label{eq:axes_ellipse_2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Re1 = Re2
+\end_layout
+
+\begin_layout Standard
+У нас есть 2 параболоида.
+ При 
+\begin_inset Formula $Re_{1}=Re_{2}$
+\end_inset
+
+ они имеют общую вершину.
+ Как они могут пересекаться?
+\end_layout
+
+\begin_layout Enumerate
+Один вытянут параболоид вдоль оси 
+\begin_inset Formula $A_{1}$
+\end_inset
+
+,
+ а второй вытянут вдоль оси 
+\begin_inset Formula $A_{2}$
+\end_inset
+
+,
+ рассмотрим поперечное сечение при произвольном 
+\begin_inset Formula $Re$
+\end_inset
+
+.
+ Тут эллипсы всегда в 4 точках пересекаются (вид сверху рис.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:4-points"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ и чем ближе к вершине 
+\begin_inset Formula $Re=Re_{1}$
+\end_inset
+
+,
+ тем ближе к 
+\begin_inset Formula $\left(A_{1},A_{2}\right)=\left(0,0\right)$
+\end_inset
+
+) – есть линия пересечения,
+ если посмотреть в 3D,
+ она выглядит как 2 параболы,
+ выходящие из одной вершины – оба уравнения решаются,
+ 2 моды
+\end_layout
+
+\begin_layout Enumerate
+Одна из осей эллипсов одинаковая (вид сверху рис.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:2-points"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+),
+ тогда их пересечение это 1 парабола (вид сверху выглядит как 2 точки,
+ рис.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:2-points"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) – оба уравнения решаются,
+ 2 моды,
+ но они вырожденные,
+ поэтому можно сказать,
+ что это 1 мода.
+\end_layout
+
+\begin_layout Enumerate
+Один параболоид находится внутри второго (вид сверху рис.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:no-points"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) – пересечений нет,
+ кроме 1 точки в вершине.
+\end_layout
+
+\begin_layout Standard
+Заметим,
+ что в случае 
+\begin_inset Formula $Re_{1}=Re_{2}$
+\end_inset
+
+ у нас картина не зависит от 
+\begin_inset Formula $Re$
+\end_inset
+
+.
+ Действительно,
+ случаи 1,
+ 2,
+ 3 можно формализовать следующим образом:
+\end_layout
+
+\begin_layout Standard
+В случае 1 из картинки видно условие того,
+ что есть вещественные решения:
+ одна ось эллипса меньше,
+ а другая больше:
+\begin_inset Formula 
+\[
+\begin{cases}
+a_{1}/\delta_{1}<a_{2}/\beta_{2};\\
+a_{1}/\beta_{1}>a_{2}/\delta_{2}.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В случае 2 какая-либо ось одного эллипса равна этой же оси второго
+\begin_inset Formula 
+\begin{equation}
+a_{1}/\delta_{1}=a_{2}/\beta_{2}.\label{eq:second_case_condition}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+В случае 3 обе оси одного Эллипса больше второго
+\begin_inset Formula 
+\[
+\begin{cases}
+a_{1}/\delta_{1}>a_{2}/\beta_{2};\\
+a_{1}/\beta_{1}>a_{2}/\delta_{2}.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Т.к.
+ 
+\begin_inset Formula $Re_{1}=Re_{2}$
+\end_inset
+
+,
+ у нас множитель 
+\begin_inset Formula $Re-Re_{1}$
+\end_inset
+
+ везде сокращается,
+ то есть,
+ не зависит от 
+\begin_inset Formula $Re$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 4_solutions.png
+	display false
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Пересечение в 4х точках
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:4-points"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 2_solutions.png
+	display false
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Пересечение в 2х точках
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2-points"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename no_solutions.png
+	display false
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Пересечения нет
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:no-points"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Re1 != Re2
+\end_layout
+
+\begin_layout Standard
+Посмотрим,
+ что изменится при разных 
+\begin_inset Formula $Re$
+\end_inset
+
+.
+ Не будем рассматривать случаи,
+ когда один параболоид находится внутри второго – для них ничего происходить не будет.
+ Параболоиды будут пересекаться,
+ если они достаточно сильно вытянуты вдоль 
+\series bold
+разных
+\series default
+ осей,
+ либо если вершина более узкого параболоида находится ниже (на оси 
+\begin_inset Formula $Re$
+\end_inset
+
+),
+ чем вершина более широкого.
+ Все эти случаи объединяет то,
+ что линия пересечения параболоидов будет начинаться с некоторого критического 
+\begin_inset Formula $Re=Re^{*}$
+\end_inset
+
+.
+ При 
+\begin_inset Formula $Re<Re^{*}$
+\end_inset
+
+ система 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:A1-A2-system"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ не имеет решений.
+ Однако вспомним,
+ что у нас всегда есть мода 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:0_A2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ для 
+\begin_inset Formula $Re>Re_{2}$
+\end_inset
+
+ и мода 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:A1_0"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ для 
+\begin_inset Formula $Re>Re_{1}$
+\end_inset
+
+.
+ То есть,
+ если мы идем от 
+\begin_inset Formula $\min\left(Re_{1},Re_{2}\right)$
+\end_inset
+
+ до 
+\begin_inset Formula $Re^{*}$
+\end_inset
+
+ у нас есть ровно 1 мода (тривиальное решение 
+\begin_inset Formula $\left(A_{1},A_{2}\right)\equiv\left(0,0\right)$
+\end_inset
+
+ не рассматриваем).
+ 
+\end_layout
+
+\begin_layout Standard
+Как найти точку 
+\begin_inset Formula $Re=Re^{*}$
+\end_inset
+
+?
+ Для этого посмотрим как меняется вид сверху при движении от 
+\begin_inset Formula $\min\left(Re_{1},Re_{2}\right)$
+\end_inset
+
+.
+ Вначале у нас есть только один эллипс.
+ После того как мы прошли точку 
+\begin_inset Formula $Re=\max\left(Re_{1},Re_{2}\right)$
+\end_inset
+
+,
+ у нас возникает второй эллипс внутри первого (рис.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:no-points"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) и постепенно растет,
+ пока не коснется внешнего эллипса (рис.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:2-points"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) и дальше пойдет как показано на рис.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:4-points"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ Это может происходить не всегда:
+ если обе оси внутреннего эллипса растут слишком медленно с 
+\begin_inset Formula $Re$
+\end_inset
+
+,
+ они никогда не догонят оси большого эллипса.
+ Как мы можем оценить рост?
+ А прямо из выражения для осей эллипса 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:axes_ellipse_1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:axes_ellipse_2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+:
+ 
+\begin_inset Formula $a^{2}$
+\end_inset
+
+ и 
+\begin_inset Formula $b^{2}$
+\end_inset
+
+ растут линейно с 
+\begin_inset Formula $Re$
+\end_inset
+
+.
+ Возьмем такую ось,
+ которая является 
+\series bold
+большей
+\series default
+ для внутреннего эллипса,
+ пускай будет 
+\begin_inset Formula $a^{2}$
+\end_inset
+
+ и поставим условие на то,
+ что внутренний эллипс (для определенности пусть будет эллипс 2) догонит внешний (эллипс 1) по этой оси:
+\begin_inset Formula 
+\[
+2\frac{a_{2}}{\beta_{2}}>2\frac{a_{1}}{\delta_{1}},
+\]
+
+\end_inset
+
+откуда
+\begin_inset Formula 
+\[
+a_{2}\delta_{1}-a_{1}\beta_{2}>0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Число 
+\begin_inset Formula $Re^{*}$
+\end_inset
+
+ при котором внутренний эллипс догонит и коснется внешний и будет тем самым критическим значением.
+ В этот момент оси эллипсов 
+\begin_inset Formula $a$
+\end_inset
+
+ равны:
+\begin_inset Formula 
+\[
+2\frac{a_{1}}{\delta_{1}}\left(Re^{*}-Re_{1}\right)=2\frac{a_{2}}{\beta_{2}}\left(Re^{*}-Re_{2}\right),
+\]
+
+\end_inset
+
+откуда
+\begin_inset Formula 
+\begin{equation}
+Re^{*}=\frac{Re_{2}\frac{a_{2}}{\beta_{2}}-Re_{1}\frac{a_{1}}{\delta_{1}}}{\frac{a_{2}}{\beta_{2}}-\frac{a_{1}}{\delta_{1}}}=\frac{Re_{2}a_{2}\delta_{1}-Re_{1}a_{1}\beta_{2}}{a_{2}\delta_{1}-a_{1}\beta_{2}}=\frac{1}{Re_{1}}\frac{\frac{Re_{2}}{Re_{1}}-\frac{a_{1}\beta_{2}}{a_{2}\delta_{1}}}{1-\frac{a_{1}\beta_{2}}{a_{2}\delta_{1}}}.\label{eq:Re_critical}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Получается,
+ что система 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:A1-A2-system"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ начинает решаться 
+\begin_inset Formula $Re^{*}>0$
+\end_inset
+
+,
+ т.е.
+ 
+\begin_inset Formula $\frac{Re_{2}}{Re_{1}}>\frac{a_{1}\beta_{2}}{a_{2}\delta_{1}}$
+\end_inset
+
+.
+ При выполнении этого условия мы сначала имеем 1 моду,
+ которая дается уравнением 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:A1_0"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ а при 
+\begin_inset Formula $Re>Re^{*}$
+\end_inset
+
+ у нас возникает 2 новых моды,
+ которые даются решением 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:A1-A2-system"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ В точке 
+\begin_inset Formula $Re=Re^{*}$
+\end_inset
+
+ произошла бифуркация (система резко изменила поведение).
+\end_layout
+
+\end_body
+\end_document
