@@ -1,0 +1,530 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extarticle
+\begin_preamble
+%\usepackage{tempora}
+\usepackage[tableposition=top,font=small,justification=centering]{caption}
+\usepackage{indentfirst}
+\pagestyle{plain}
+\usepackage{fontspec} 
+\defaultfontfeatures{Ligatures={TeX},Renderer=Basic} 
+\setmainfont[Ligatures={TeX,Historic}]{Times New Roman}[NFSSFamily=ntxtlf]
+
+\usepackage{ccaption}
+\captiondelim{. }
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children no
+\language russian
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format pdf5
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize 14
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style russian
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Система Лоренца:
+\begin_inset Formula 
+\[
+\begin{cases}
+\frac{dX}{d\tau}=\sigma\left(Y-X\right);\\
+\frac{dY}{d\tau}=\rho X-Y-XZ;\\
+\frac{dZ}{d\tau}=-Z+XY.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $\left(X_{0},Y_{0},Z_{0}\right)$
+\end_inset
+
+ – решение стационарного уравнения 
+\begin_inset Formula $\frac{d}{d\tau}\left(X,Y,Z\right)=0$
+\end_inset
+
+,
+ 
+\begin_inset Formula $X=X_{0}+x$
+\end_inset
+
+,
+ 
+\begin_inset Formula $Y=Y_{0}+y$
+\end_inset
+
+,
+ 
+\begin_inset Formula $Z=Z_{0}+z$
+\end_inset
+
+.
+ Тогда
+\begin_inset Formula 
+\[
+\begin{cases}
+\frac{dx}{d\tau}=\sigma\left(Y_{0}+y-X_{0}-x\right);\\
+\frac{dy}{d\tau}=\rho\left(X_{0}+x\right)-Y_{0}-y-\left(X_{0}+x\right)\left(Z_{0}+z\right);\\
+\frac{dz}{d\tau}=-Z_{0}-z+\left(X_{0}+x\right)\left(Y_{0}+y\right).
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Сократим все,
+ что относится к стационарному уравнению:
+\begin_inset Formula 
+\[
+\begin{cases}
+\frac{dx}{d\tau}=\sigma\left(y-x\right);\\
+\frac{dy}{d\tau}=\rho x-y-\left(Z_{0}x+X_{0}z+xz\right);\\
+\frac{dz}{d\tau}=-z+\left(X_{0}y+Y_{0}x+xy\right).
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Линеаризуем,
+ отбросив второй порядок:
+\begin_inset Formula 
+\[
+\begin{cases}
+\frac{dx}{d\tau}=\sigma\left(y-x\right);\\
+\frac{dy}{d\tau}=\rho x-y-Z_{0}x-X_{0}z;\\
+\frac{dz}{d\tau}=-z+X_{0}y+Y_{0}x.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдем стационарные точки:
+\begin_inset Formula 
+\[
+\begin{cases}
+0=\sigma\left(Y_{0}-X_{0}\right);\\
+0=\rho X_{0}-Y_{0}-X_{0}Z_{0};\\
+0=-Z_{0}+X_{0}Y_{0}.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Из 1 и 3 уравнений получаем 
+\begin_inset Formula $Y_{0}=X_{0}$
+\end_inset
+
+ и 
+\begin_inset Formula $Z_{0}=X_{0}^{2}$
+\end_inset
+
+ соответственно.
+ 2-ое уравнение дает
+\begin_inset Formula 
+\[
+\rho X_{0}-X_{0}-X_{0}^{3}=0,
+\]
+
+\end_inset
+
+откуда получим 3 решения:
+ 
+\begin_inset Formula $X_{0}=0$
+\end_inset
+
+ и 
+\begin_inset Formula $X_{0}=\pm\sqrt{\rho-1}$
+\end_inset
+
+.
+ Получились стационарные точки 
+\begin_inset Formula $\left(0,0,0\right)$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\left(\sqrt{\rho-1},\sqrt{\rho-1},\rho-1\right)$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\left(-\sqrt{\rho-1},-\sqrt{\rho-1},\rho-1\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Начнем с более простой точки 
+\begin_inset Formula $\left(0,0,0\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\begin{cases}
+\frac{dx}{d\tau}=\sigma\left(y-x\right);\\
+\frac{dy}{d\tau}=\rho x-y;\\
+\frac{dz}{d\tau}=-z.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Система разделилась на 1 уравнение для 
+\begin_inset Formula $z$
+\end_inset
+
+ и 2 уравнения для 
+\begin_inset Formula $x$
+\end_inset
+
+,
+ 
+\begin_inset Formula $y$
+\end_inset
+
+:
+ 
+\begin_inset Formula $z=Ce^{-\tau}$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+\frac{d}{d\tau}\left(\begin{array}{c}
+x\\
+y
+\end{array}\right)=\left(\begin{array}{cc}
+-\sigma & \sigma\\
+\rho & -1
+\end{array}\right)\left(\begin{array}{c}
+x\\
+y
+\end{array}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Общее решение можно выразить через собственные числа 
+\begin_inset Formula $\lambda_{1,2}$
+\end_inset
+
+ и собственные векторы 
+\begin_inset Formula $v_{1,2}$
+\end_inset
+
+ матрицы в правой части:
+\begin_inset Formula 
+\[
+\left(\begin{array}{c}
+x\\
+y
+\end{array}\right)=Av_{1}e^{\lambda_{1}\tau}+Bv_{2}e^{\lambda_{2}\tau}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Найдем собственные числа:
+\begin_inset Formula 
+\[
+\det\left(\begin{array}{cc}
+-\sigma-\lambda & \sigma\\
+\rho & -1-\lambda
+\end{array}\right)=\left(\sigma+\lambda\right)\left(1+\lambda\right)-\rho\sigma=0.
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\lambda^{2}+\left(\sigma+1\right)\lambda+\sigma\left(1-\rho\right)=0,
+\]
+
+\end_inset
+
+ откуда
+\begin_inset Formula 
+\[
+\lambda_{1,2}=\frac{-\left(\sigma+1\right)\pm\sqrt{\left(\sigma+1\right)^{2}-4\sigma\left(1-\rho\right)}}{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Неустойчивость возникает,
+ когда 
+\begin_inset Formula $Re\left(\lambda\right)>0$
+\end_inset
+
+.
+ Если 
+\begin_inset Formula $D=\left(\sigma+1\right)^{2}-4\sigma\left(1-\rho\right)<0$
+\end_inset
+
+,
+ это условие выполняется.
+ Условие 
+\begin_inset Formula $D>0$
+\end_inset
+
+ дает
+\begin_inset Formula 
+\[
+\begin{split}\left(\sigma+1\right)^{2} & >4\sigma\left(1-\rho\right)\\
+\rho & >1-\frac{\left(\sigma+1\right)^{2}}{4\sigma}=-\frac{\left(\sigma-1\right)^{2}}{4\sigma},
+\end{split}
+\]
+
+\end_inset
+
+что выполняется для всех 
+\begin_inset Formula $\rho>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Отсюда следует,
+ что 
+\begin_inset Formula $D>0$
+\end_inset
+
+ всегда.
+ Неустойчивость будет при (взяли 
+\begin_inset Quotes rld
+\end_inset
+
++
+\begin_inset Quotes rrd
+\end_inset
+
+,
+ потому что с 
+\begin_inset Quotes rld
+\end_inset
+
+–
+\begin_inset Quotes rrd
+\end_inset
+
+ будет отрицательное и так):
+\begin_inset Formula 
+\[
+-\left(\sigma+1\right)+\sqrt{\left(\sigma+1\right)^{2}-4\sigma\left(1-\rho\right)}>0,
+\]
+
+\end_inset
+
+откуда
+\begin_inset Formula 
+\[
+\begin{split}\left(\sigma+1\right)^{2}-4\sigma\left(1-\rho\right) & >\left(\sigma+1\right)^{2};\\
+\rho & >1.
+\end{split}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Таким образом,
+ критическое число Рэлея для этой стационарной точки есть 
+\begin_inset Formula $\rho=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Теперь рассмотрим разложение вблизи двух оставшихся стационарных точек:
+\begin_inset Formula 
+\[
+\begin{cases}
+\frac{dx}{d\tau}=\sigma\left(y-x\right);\\
+\frac{dy}{d\tau}=\rho x-y-\left(\rho-1\right)x-s\sqrt{\rho-1}z;\\
+\frac{dz}{d\tau}=-z+s\sqrt{\rho-1}y+s\sqrt{\rho-1}x;
+\end{cases}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\begin{cases}
+\frac{dx}{d\tau}=\sigma\left(y-x\right);\\
+\frac{dy}{d\tau}=x-y-s\sqrt{\rho-1}z;\\
+\frac{dz}{d\tau}=-z+s\sqrt{\rho-1}y+s\sqrt{\rho-1}x,
+\end{cases}
+\]
+
+\end_inset
+
+где 
+\begin_inset Formula $s=+1$
+\end_inset
+
+ для одной стационарной точки и 
+\begin_inset Formula $s=-1$
+\end_inset
+
+ для второй.
+ Попробуем найти собственные числа,
+ как и для предыдущей точки:
+\begin_inset Formula 
+\[
+\det\left(\begin{array}{ccc}
+-\sigma-\lambda & \sigma & 0\\
+1 & -1-\lambda & -s\sqrt{\rho-1}\\
+s\sqrt{\rho-1} & s\sqrt{\rho-1} & -1-\lambda
+\end{array}\right)=0
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\begin{split}0 & =\underset{\text{главная диагональ}}{\underbrace{-\left(\sigma+\lambda\right)\left(1+\lambda\right)^{2}-\sigma\left(\rho-1\right)}}\\
+ & \quad\underset{\text{побочная}}{\underbrace{+\sigma\left(1+\lambda\right)-\left(\sigma+\lambda\right)\left(\rho-1\right)}};\\
+0 & =\lambda^{3}+\left(\sigma+2\right)\lambda^{2}+\left(\sigma+\rho\right)\lambda+2\sigma\left(\rho-1\right).
+\end{split}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
