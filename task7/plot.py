@@ -49,6 +49,10 @@ def cubic_roots_real_part(a, b, c) -> list[float]:
     return [x1, x2, x2]
 
 def eigenvalues_real_parts(prandtl: float, rayleigh: float) -> list[float]:
+    """
+    Задает коэффициенты куб. уравнения по числам Прандтля и Рэлея
+    и возвращает реальные части всех корней
+    """
     return cubic_roots_real_part(
         a = prandtl + 2.0,
         b = prandtl + rayleigh,
@@ -56,6 +60,10 @@ def eigenvalues_real_parts(prandtl: float, rayleigh: float) -> list[float]:
     )
 
 def is_stable(prandtl: float, rayleigh: float) -> bool:
+    """
+    True: все реальные части отрицательные (устойчивое равновесие, решение возвращается к стационарной точке)
+    False: хотя бы одна положительная (неустойчивое равновесие)
+    """
     real_parts = eigenvalues_real_parts(prandtl = prandtl, rayleigh = rayleigh)
     for real_part in real_parts:
         if real_part > 0.0:
@@ -78,14 +86,14 @@ if __name__=='__main__':
     plt.figure()
     ax = plt.gca()
     img = ax.imshow(stability_region,
-                    extent=[rayleighs.min(), rayleighs.max(), prandtls.min(), prandtls.max()],
+                    extent=(rayleighs.min(), rayleighs.max(), prandtls.min(), prandtls.max()),
                     cmap = ListedColormap(['darkorange', 'lightseagreen']),
                     origin='lower',
                     interpolation='none')
     fig = plt.gcf()
     cb = fig.colorbar(img, ax=ax, ticks = [-1, 1])
     cb.ax.set_yticklabels([r'$Re(\lambda) > 0$', r'$Re(\lambda) < 0$'])
-    ax.set_title('Исследование собственных чисел')
+    ax.set_title(r'$Re(\lambda)$')
     ax.set_xlabel('Число Рэлея')
     ax.set_ylabel('Число Прандтля')
     plt.show()
